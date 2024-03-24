@@ -7,12 +7,13 @@ FIT5120 Main project
 - **Install Composer**
 	Download and Install Composer [here](https://getcomposer.org/download/)
 	check whether composer installed, open Command Line, then type `composer` to check
-- **Create Laravel Project**
-	run this command to create a Laravel project `composer create-project laravel/laravel:^{laravel-version} {project-name}` replace the `{laravel-version}` with the Laravel version you want to Install, and replace `{project-name}` with your project name
-
-	Another alternatives method to install Laravel you can use a Laravel installer. To install the installer you can run `composer global require laravel/installer`. And to create the project you can run `laravel new {project-name}`
+- **Clone This Repository** 
+	As the title says, clone this repository
 - **Run the Project**
 	To run the project, go to the Laravel project directory, then run `php artisan serve`
+
+## Important Folder
+
 
 ## Important Link
 - [Documentation](https://laravel.com/docs)
