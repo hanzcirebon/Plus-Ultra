@@ -9,11 +9,28 @@ FIT5120 Main project
 	check whether composer installed, open Command Line, then type `composer` to check
 - **Clone This Repository** 
 	As the title says, clone this repository
+- **Setup Your .env File**
+	Ask Shyam or Hanif for the `.env` file
+- **Setup Your Database Settings**
+	Ask Shyam or Hanif for the `.sqlite` file
+- **Run the Project**
+	To run the project, go to the Laravel project directory, then run `php artisan serve`
+
+### Clone Laravel Project
+
+- **Clone Laravel**
+	Clone your Laravel project from GitHub
+- **Setup Your .env File**
+	Setup your own Laravel .env file (or you could ask your teammate for the .env file if you working in a group)
+- **Setup Your Database Settings**
+	Setup your own database file (or ask your teammate for it lmao)
+
+### Run Laravel Project
 - **Run the Project**
 	To run the project, go to the Laravel project directory, then run `php artisan serve`
 
 ## Important Folder
-
+- **resource/js**
 
 ## Important Link
 - [Documentation](https://laravel.com/docs)
