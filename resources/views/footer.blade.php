@@ -1,12 +1,5 @@
 <footer class="text-white bg-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-        </div>
-    </div>
-    <div class="container py-4 py-lg-5">
+    <div class="container py-4 py-lg-5" style="margin-top: 64px;">
         <div class="row justify-content-center">
             <div class="col-sm-4 col-md-3 text-center text-lg-start d-flex flex-column item">
                 <h3 class="fs-6 text-white">Services</h3>
@@ -57,3 +50,7 @@
         </div>
     </div>
 </footer>
+<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/aos.min.js') }}"></script>
+<script src="{{ asset('js/bs-init.js') }}"></script>
+<script src="{{ asset('js/SBWP-Search-Bar-With-Parameters-search-bar.js') }}"></script>

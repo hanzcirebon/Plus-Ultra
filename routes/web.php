@@ -26,8 +26,3 @@ Route::get('global-trend', function(){
 Route::get('career-choices', function(){
     return view('career_choices');
 });
-
-# Route for about us page
-Route::get('about-us', function(){
-    return view('about_us');
-});
