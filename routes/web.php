@@ -2,9 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+# Route for welcome page
+Route::get('/welcome', function (){
+    return view('welcome');
+});
+
 # Route for homepage
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 # Route for course overview page
