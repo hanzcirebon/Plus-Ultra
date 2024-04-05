@@ -78,7 +78,7 @@
                     </section>
                     <div class="card" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science&nbsp;</span></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
@@ -86,15 +86,7 @@
                     </div>
                     <div class="card" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
-                        </div>
-                    </div>
-                    <div class="card" style="margin-bottom: 15px;">
-                        <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science&nbsp;</span></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
@@ -102,7 +94,7 @@
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science</span><span style="color: rgb(124, 118, 187);">&nbsp;</span></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
@@ -110,7 +102,7 @@
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science</span><span style="color: rgb(124, 118, 187);">&nbsp;</span></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
@@ -118,7 +110,15 @@
                     </div>
                     <div class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to Computer Science&nbsp;</span></h5>
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science&nbsp;</span></h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
+                        </div>
+                    </div>
+                    <div class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
+                        <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Introduction to </span><span style="color: rgb(255, 135, 176);">Computer Science</span><span style="color: rgb(124, 118, 187);">&nbsp;</span></h5>
                         </div>
                         <div class="card-body">
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>

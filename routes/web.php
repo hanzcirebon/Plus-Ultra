@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebController;
 
 # Route for welcome page
 Route::get('/welcome', function (){
@@ -8,7 +9,7 @@ Route::get('/welcome', function (){
 });
 
 # Route for homepage
-Route::get('/', function () {
+Route::get('/', function (){
     return view('home');
 });
 

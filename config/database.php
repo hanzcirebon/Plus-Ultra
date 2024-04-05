@@ -91,10 +91,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'search_path' => 'public',
-            'sslmode' => 'require',
-            'options' => [
-                PDO::MYSQL_ATTR_SSL_CA => env('DB_SSL_CA', base_path('storage/app/ssl/DigiCertGlobalRootCA.crt.pem')),
-            ],
+            'sslmode' => 'require', // Set SSL mode to 'require'
         ],
 
         'sqlsrv' => [

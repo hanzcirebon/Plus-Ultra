@@ -6,7 +6,6 @@
                 <li class="nav-item"><a class="nav-link" href="/course-overview" style="color: rgb(124,118,187);">Course Overview</a></li>
                 <li class="nav-item"><a class="nav-link" href="/global-trend" style="color: rgb(124,118,187);">Global trends</a></li>
                 <li class="nav-item"><a class="nav-link" href="/career-choices" style="color: rgb(124,118,187);">Career Choices</a></li>
-                <li class="nav-item"><a class="nav-link" href="/about-us" style="color: rgb(124,118,187);">About Us</a></li>
             </ul>
         </div>
     </div>
