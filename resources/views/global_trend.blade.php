@@ -9,5 +9,6 @@
     Hellow this is global trend page lmapo
 
     @include('footer')
+    @include('script_js')
 </body>
 </html>
