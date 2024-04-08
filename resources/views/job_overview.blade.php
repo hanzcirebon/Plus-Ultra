@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
-@include('header')
+<header>
+    @include('header')
+</header>
 
 <body>
     
