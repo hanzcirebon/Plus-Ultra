@@ -21,9 +21,14 @@
                 <div class="p-xl-5 m-xl-5"><img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="{{ asset('img/Body_new.jpeg') }}"></div>
             </div>
         </div>
-        <div></div>
+        <div class="banner text-interact">
+            <h1>Hi! Welcome to IT Explore, <span id="dynamic-text"></span><span class="cursor">&nbsp;</span></h1>
+        </div>
         <div class="d-flex justify-content-center h-100">
-            <div class="searchbar"><input type="text" class="search_input" placeholder="Search..."><a class="search_icon" href="#"><i class="fas fa-search"></i></a></div>
+            <div class="search-container">
+                <input type="text" id="course-input" class="search-input" placeholder="Course Name...">
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
         </div>
     </div>
     <div class="card" style="border-color: var(--bs-body-bg);">
@@ -160,7 +165,7 @@
                     <div class="col-md-6 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
                         <div style="max-width: 350px;">
                             <h2 class="text-uppercase fw-bold"><span style="color: rgb(124, 118, 187);">We help you to discover your </span><span style="color: rgb(255, 135, 176);">path</span><span style="color: rgb(124, 118, 187);"> in IT</span></h2>
-                            <p class="my-3">We guide you through the vast landscape of IT and digital creation courses. Whether you’re just starting or looking to specialize, we have something for everyone.</p><a class="btn btn-primary btn-lg me-2" role="button" data-bss-hover-animate="pulse" href="Career-Pathway.html" style="background: rgb(124,118,187);">Know More</a>
+                            <p class="my-3">We guide you through the vast landscape of IT and digital creation courses. Whether you’re just starting or looking to specialize, we have something for everyone.</p><a class="btn btn-primary btn-lg me-2" role="button" data-bss-hover-animate="pulse" href="{{ route('job-overview.index') }}" style="background: rgb(124,118,187);">Know More</a>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -185,7 +190,7 @@
                             <p class="card-text">List of courses, including course title, introduction, difficulty level, and estimated study time&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                             <div class="d-flex">
                                 <div></div>
-                            </div><a data-bss-hover-animate="pulse" href="#"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
+                            </div><a data-bss-hover-animate="pulse" href="{{ route('course-overview.index') }}"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +200,7 @@
                             <p class="text-primary card-text mb-0"></p>
                             <h4 class="card-title">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: rgb(124, 118, 187);">Global trends</span></h4>
                             <p class="card-text">View the latest global IT trends, such as emerging technologies, industry growth rates, and key players.</p>
-                            <div class="d-flex"></div><a data-bss-hover-animate="pulse" href="#"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
+                            <div class="d-flex"></div><a data-bss-hover-animate="pulse" href="{{ route('global-trend.index') }}"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +209,7 @@
                         <div class="card-body p-4" style="background: rgba(39,163,255,0.17);">
                             <p class="text-primary card-text mb-0"></p>
                             <h4 class="card-title">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<span style="color: rgb(124, 118, 187);">Career Choices</span></h4>
-                            <p class="card-text">Provide growth trends and future needs of different IT professions.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><a data-bss-hover-animate="pulse" href="#"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
+                            <p class="card-text">Provide growth trends and future needs of different IT professions.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p><a data-bss-hover-animate="pulse" href="{{ route('job-overview.index') }}"><span style="color: rgb(0, 0, 0);">Learn more...</span></a>
                             <div class="d-flex"></div>
                         </div>
                     </div>

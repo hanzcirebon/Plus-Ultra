@@ -10,7 +10,10 @@
     @include('navbar')
 
     <div class="d-flex justify-content-center h-100" style="margin-top: 10px;margin-bottom: 10px;">
-        <div class="searchbar"><input type="text" class="search_input" placeholder="Search..."><a class="search_icon" href="#"><i class="fas fa-search"></i></a></div>
+        <div class="search-container">
+                <input type="text" id="job-input" class="search-input" placeholder="Job Name...">
+                <button id="search-btn" class="search-btn">Search</button>
+            </div>
     </div><input type="text" class="search_input" placeholder="Search...">
     <div class="container">
         <div class="content">
@@ -19,11 +22,19 @@
                     <div class="d-none d-md-block">
                         <div class="filters">
                             <div class="filter-item" style="margin-top: 23px;">
-                                <h5><span style="color: rgb(124, 118, 187);">Job Categories</span></h5>
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-17"><label class="form-check-label" for="formCheck-17">Information Technology</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-18"><label class="form-check-label" for="formCheck-18">Decision Support Systems</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-19"><label class="form-check-label" for="formCheck-19">Security Science</label></div>
-                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-20"><label class="form-check-label" for="formCheck-20">Computer Science</label></div><a href="#">See More&nbsp;</a>
+                                <h5><span style="color: rgb(124, 118, 187);">Job Fields</span></h5>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Information Technology</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Data Structures</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Decision Support Systems</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Computer Science</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Security Science</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Artificial Intelligence</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Computer Graphics</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Database Management</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-14"><label class="form-check-label" for="formCheck-14">Information Systems</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-15"><label class="form-check-label" for="formCheck-15">Systems Analysis and Design</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-16"><label class="form-check-label" for="formCheck-16">Programming</label></div>
+                                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">Networks and Communications</label></div>
                             </div>
                             <div class="filter-item" style="margin-top: 18px;margin-bottom: 19px;"></div>
                             <div class="filter-item" style="margin-top: 14px;">

@@ -33,7 +33,7 @@
             <div class="col">
                 <div class="card" data-bss-hover-animate="pulse">
                     <div class="card-body p-4">
-                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Data Science</span></h4>
+                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Bachelor of Data Science</span></h4>
                         <p class="card-text" style="text-align: justify;">Students will learn how to collect, process, and analyze data to provide data-driven decision support. Possible careers include data analyst, data engineer, and machine learning engineer.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
             <div class="col">
                 <div class="card" data-bss-hover-animate="pulse">
                     <div class="card-body p-4">
-                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Web Development</span></h4>
+                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Bachelor of Web Development</span></h4>
                         <p class="card-text" style="text-align: justify;">Web Development courses provide students with the skills needed to build websites and web applications. They can become front-end, back-end, or full-stack development engineers, or they can choose UI/UX design, etc.</p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body p-4" data-bss-hover-animate="pulse">
-                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Cybersecurity</span></h4>
+                        <h4 class="card-title"><span style="color: rgb(124, 118, 187);">Bachelor of Cybersecurity</span></h4>
                         <p class="card-text" style="text-align: justify;">Students will learn how to protect computer systems and networks from malicious attacks and data breaches. Possible careers include cybersecurity engineers, information security analysts, and network penetration testers.</p>
                     </div>
                 </div>
