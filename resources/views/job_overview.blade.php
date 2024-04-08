@@ -46,32 +46,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-md-none"><a class="btn btn-link d-md-none filter-collapse" data-bs-toggle="collapse" aria-expanded="false" aria-controls="filters" href="#filters" role="button" style="color: rgb(0,0,0);background: rgba(124,118,187,0.58);">Filters<i class="icon-arrow-down filter-caret"></i></a>
-                        <div class="collapse" id="filters">
-                            <div class="filters">
-                                <div class="filter-item" style="margin-top: 23px;">
-                                    <h5><span style="color: rgb(124, 118, 187);">Job Categories</span></h5>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-17"><label class="form-check-label" for="formCheck-17">Information Technology</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-18"><label class="form-check-label" for="formCheck-18">Decision Support Systems</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-19"><label class="form-check-label" for="formCheck-19">Security Science</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-20"><label class="form-check-label" for="formCheck-20">Computer Science</label></div><a href="#">See More&nbsp;</a>
-                                </div>
-                                <div class="filter-item" style="margin-top: 18px;margin-bottom: 19px;"></div>
-                                <div class="filter-item" style="margin-top: 14px;">
-                                    <h5><span style="color: rgb(124, 118, 187);">Job Type</span></h5>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-21"><label class="form-check-label" for="formCheck-21">Full time</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-22"><label class="form-check-label" for="formCheck-22">Part-Time</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-23"><label class="form-check-label" for="formCheck-23">Contract</label></div>
-                                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-24"><label class="form-check-label" for="formCheck-24">Casual</label></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col">
                     <section class="py-4 py-xl-5" style="padding-bottom: 76px;margin-top: -1px;">
                         <h1><span style="color: rgb(124, 118, 187);">Career Overview</span></h1>
                     </section>
+                    @foreach($jobs as $job)
+                    <a href="{{ route('job-overview.details', $job->job_title) }}" data-bss-hover-animate="pulse" class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
+                        <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
+                            <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">{{$job->job_title}}</span></h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"></p>
+                        </div>
+                    </a>
+                    @endforeach
                     <div class="card" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
                             <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Data Scientist</span></h5>
@@ -112,7 +101,7 @@
                             <p class="card-text">These courses are designed for individuals with little to no prior experience in IT.</p>
                         </div>
                     </div>
-                    <div class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
+                    <div data-bss-hover-animate="pulse" class="card" data-aos="fade-up" data-aos-duration="400" style="margin-bottom: 15px;">
                         <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
                             <h5 class="mb-0"><span style="color: rgb(124, 118, 187);">Database Administrator</span></h5>
                         </div>

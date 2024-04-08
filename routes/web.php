@@ -28,3 +28,4 @@ Route::get('/career-choices/{category_name}', [CareerController::class, 'LoadCar
 
 # Routing For Jobs Overview Page
 Route::get('/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');
+Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
