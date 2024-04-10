@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\CricosCourse;
 use App\Models\CourseDescription;
 
@@ -10,10 +11,18 @@ class CourseOverviewController extends Controller
 {
     # Load course  overview page.
     public  function index() {
-        $courses = CourseDescription::select('course_name','course_single_desc')->get();
+        # Join the course_description and join it with cricos
+        $courses = DB::table( 'course_description' )
+            ->join('cricos', 'cricos.course_name', '=', 'course_description.course_name')
+            ->select('course_description.course_name', 'category', 'course_single_desc')
+            ->get();
+        
+        # Select distinct values for categories
+        $distinctCategories = $courses->pluck('category')->unique();
 
+        //dd($distinctCategories);
         //dd($courses);
-        return view('course_overview', compact('courses'));
+        return view('course_overview', compact('courses', 'distinctCategories'));
     }
 
     # Load course  details by taking the course name as parameter.
@@ -39,7 +48,7 @@ class CourseOverviewController extends Controller
         $selectedCategories = $request->input('categories');
     
         // Filter courses based on selected categories
-        $filteredCourses = Course::whereIn('category', $selectedCategories)->get();
+        $filteredCourses = CourseDescription::whereIn('category', $selectedCategories)->get();
     
         // Return view with filtered courses
         return view('partials.courses', ['courses' => $filteredCourses]);
