@@ -34,4 +34,14 @@ class CourseOverviewController extends Controller
         //dd($course_content);
         return view('course_overview_template', compact('course_details','course_content'));
     }
+
+    public function filterCourses(Request $request) {
+        $selectedCategories = $request->input('categories');
+    
+        // Filter courses based on selected categories
+        $filteredCourses = Course::whereIn('category', $selectedCategories)->get();
+    
+        // Return view with filtered courses
+        return view('partials.courses', ['courses' => $filteredCourses]);
+    }
 }
