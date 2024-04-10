@@ -6,18 +6,28 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\GlobalTrendController;
+use App\Http\Middleware\CheckGlobalPassword;
 
 # Route for welcome page
 Route::get('/welcome', function (){
     return view('welcome');
 });
 
-# Routing From/For Home Page
+#Login Page
+// Display the login form
+// Route::get('/login', function () {
+//     return view('login');
+// })->name('login');
+
+# Middleware
+//Route::middleware(CheckGlobalPassword::class)->group(function() {
+    # Routing From/For Home Page
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 
 # Routing From/For Course Overview Page
 Route::get('/course-overview', [CourseOverviewController::class, 'index'])->name('course-overview.index');
 Route::get('/course-overview/{course_name}', [CourseOverviewController::class, 'LoadCourseDesc'])->name('courses-overview.detail');
+Route::get('/course-overview}', [CourseOverviewController::class, 'filterCourses'])->name('filter-courses');
 
 # Routing From/For global trend page
 Route::get('global-trend', [GlobalTrendController::class, 'index'])->name('global-trend.index');
@@ -29,3 +39,5 @@ Route::get('/career-choices/{category_name}', [CareerController::class, 'LoadCar
 # Routing For Jobs Overview Page
 Route::get('/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');
 Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
+//});
+

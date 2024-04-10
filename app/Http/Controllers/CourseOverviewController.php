@@ -48,9 +48,13 @@ class CourseOverviewController extends Controller
         $selectedCategories = $request->input('categories');
     
         // Filter courses based on selected categories
-        $filteredCourses = CourseDescription::whereIn('category', $selectedCategories)->get();
+        $filteredCourses = DB::table('course_description')
+                            ->join('cricos', 'cricos.course_name', '=', 'course_description.course_name')
+                            ->whereIn('course_description.category', $selectedCategories)
+                            ->select('course_description.course_name', 'category', 'course_single_desc')
+                            ->get();
     
         // Return view with filtered courses
         return view('partials.courses', ['courses' => $filteredCourses]);
-    }
+    }    
 }

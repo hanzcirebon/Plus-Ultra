@@ -162,7 +162,7 @@
                 }).get();
                 
                 $.ajax({
-                    url: '/filter-courses', // Update with your server route
+                    url: '{{ route("filter-courses") }}', // Update with your server route
                     type: 'POST', // You can use GET if preferred
                     data: { categories: selectedCategories },
                     success: function(response) {
