@@ -1,5 +1,5 @@
 <?php
-
+# hanif is here
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CourseOverviewController;
 use App\Http\Controllers\HomepageController;
@@ -29,6 +29,8 @@ Route::get('/career-choices', [CareerController::class, 'index'])->name('career-
 Route::get('/career-choices/{category_name}', [CareerController::class, 'LoadCareerDetails'])->name('career-choices.details');
 
 # Routing For Jobs Overview Page
+
 Route::match(['get', 'post'], '/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');
 Route::get('/search-job', [JobController::class, 'search_job'])->name('search-jobs');
 Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
+
