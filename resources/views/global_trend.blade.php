@@ -10,7 +10,7 @@
 <body>
     @include('navbar')
 
-    <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">2024 IT Industry </span><span style="color: rgb(255, 135, 176);">Growth</span><span style="color: rgb(124, 118, 187);"> Rates</span></h3>
+    <!-- <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">2024 IT Industry </span><span style="color: rgb(255, 135, 176);">Growth</span><span style="color: rgb(124, 118, 187);"> Rates</span></h3>
     <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
         <div class="row gy-4 w-100" style="max-width: 800px;">
             <div class="col-12">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Emerging </span><span style="color: rgb(255, 135, 176);">Job Roles</span></h3>
     <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
         <div class="row gy-4 w-100" style="max-width: 800px;">
@@ -53,7 +53,7 @@
             </div>
         </div>
     </div>
-    <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Technology </span><span style="color: rgb(255, 135, 176);">Impact</span></h3>
+    <!-- <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Technology </span><span style="color: rgb(255, 135, 176);">Impact</span></h3>
     <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
         <div class="row gy-4 w-100" style="max-width: 800px;">
             <div class="col-12">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     @include('footer')
     <script>
