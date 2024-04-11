@@ -26,8 +26,11 @@
         </div>
         <div class="d-flex justify-content-center h-100">
             <div class="search-container">
-                <input type="text" id="course-input" class="search-input" placeholder="Course Name...">
-                <button id="search-btn" class="search-btn">Search</button>
+                <form action="{{route('course-overview.index')}}", method="POST">
+                    @csrf
+                    <input type="text" id="course-input" name="course_name" class="search-input" placeholder="Course Name...">
+                    <button id="search-btn" class="search-btn" onclick="{{route('course-overview.index')}}">Search</button>
+                </form>
             </div>
         </div>
     </div>
