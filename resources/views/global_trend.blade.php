@@ -53,19 +53,20 @@
             </div>
         </div>
     </div>
-    <!-- <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Technology </span><span style="color: rgb(255, 135, 176);">Impact</span></h3>
+    <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Related </span><span style="color: rgb(255, 135, 176);">Skills and Technologies</span><span style="color: rgb(124, 118, 187);"> on Emerging Job Roles</span></h3>
     <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
         <div class="row gy-4 w-100" style="max-width: 800px;">
             <div class="col-12">
-                <div class="card"><img class="card-img w-100 d-block placeholder" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png">
-                    <div class="card-img-overlay text-center placeholder d-flex flex-column justify-content-center align-items-center p-4"></div>
+                <div class="card">
+                <div id="network-graph"></div>
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     @include('footer')
     <script>
+        // BAR CHART
         d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_data.json")
             .then(function(data) {
                 // Process the data and create the bar chart
@@ -131,6 +132,7 @@
                 // Calculate the bar chart height dynamically
                 var chartHeight = height + margin.top + margin.bottom;
 
+                // WORD CLOUD
                 // Function to generate word cloud on bar click
                 function showWordCloud(jobTitle) {
                     // Filter the data to get skills for the selected job
@@ -252,7 +254,134 @@
                 console.error("Error fetching data:", error);
             });
 
+        // NETWORK GRAPH
+        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_data.json")
+            .then(function(data) {
+                // Extract job titles and skills data
+                const jobData = data;
 
+                // Define the number of top skills to display for each job title
+                const topSkillsCount = 10;
+
+                // Define nodes and links
+                const nodes = [];
+                const links = [];
+                const skillCounts = {}; // Object to store the count of jobs for each skill
+                jobData.forEach(job => {
+                    // Sort skills by count in descending order and take top skills
+                    const sortedSkills = Object.entries(job.count_skills)
+                        .sort((a, b) => b[1] - a[1])
+                        .slice(0, topSkillsCount);
+                    
+                    nodes.push({ id: job.job_title, type: 'job', count: job.count });
+                    sortedSkills.forEach(skill => {
+                        const skillName = skill[0];
+                        const skillCount = skill[1];
+                        if (!(skillName in skillCounts)) {
+                            skillCounts[skillName] = 0;
+                        }
+                        skillCounts[skillName]++;
+                        nodes.push({ id: skillName, type: 'skill', count: skillCount });
+                        links.push({ source: job.job_title, target: skillName });
+                    });
+                });
+
+                // Define SVG dimensions
+                const width = 750;
+                const height = 600;
+
+                // Create SVG
+                const svg = d3.select("#network-graph")
+                    .append("svg")
+                    .attr("width", width)
+                    .attr("height", height);
+
+                // Create group for zooming
+                const g = svg.append("g");
+
+                // Create simulation
+                const simulation = d3.forceSimulation(nodes)
+                    .force("link", d3.forceLink(links).id(d => d.id))
+                    .force("charge", d3.forceManyBody().strength(-300))
+                    .force("center", d3.forceCenter(width / 2, height / 2));
+
+                // Draw links
+                const link = g.selectAll(".link")
+                    .data(links)
+                    .enter().append("line")
+                    .attr("class", "link")
+                    .style("stroke", "#999") // Color of the links
+                    .style("stroke-width", 1); // Width of the links
+
+                // Draw nodes
+                const node = g.selectAll(".node")
+                    .data(nodes)
+                    .enter().append("circle")
+                    .attr("class", "node")
+                    .attr("r", d => Math.sqrt(d.count) / 2)
+                    .attr("fill", d => d.type === 'job' ? 'blue' : 'red')
+                    .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+
+                // Add node labels
+                const label = g.selectAll(null)
+                    .data(nodes)
+                    .enter()
+                    .append('text')
+                    .text(d => d.id)
+                    .attr('font-size', 12);
+
+                // Update node and link positions
+                simulation.on("tick", () => {
+                    link
+                        .attr("x1", d => d.source.x)
+                        .attr("y1", d => d.source.y)
+                        .attr("x2", d => d.target.x)
+                        .attr("y2", d => d.target.y);
+
+                    node
+                        .attr("cx", d => d.x)
+                        .attr("cy", d => d.y);
+
+                    label
+                        .attr('x', d => d.x + 10)
+                        .attr('y', d => d.y - 10);
+                });
+
+                // Define zoom behavior
+                const zoom = d3.zoom()
+                    .scaleExtent([0.1, 10])
+                    .on("zoom", function(event) {
+                        g.attr("transform", event.transform);
+                    });
+
+                // Apply zoom behavior to SVG
+                svg.call(zoom);
+
+                // Drag functions
+                function dragstarted(event, d) {
+                    if (!event.active) simulation.alphaTarget(0.3).restart();
+                    d.fx = d.x;
+                    d.fy = d.y;
+                }
+
+                function dragged(event, d) {
+                    d.fx = event.x;
+                    d.fy = event.y;
+                }
+
+                function dragended(event, d) {
+                    if (!event.active) simulation.alphaTarget(0);
+                    d.fx = null;
+                    d.fy = null;
+                }
+            })
+            .catch(function(error) {
+                console.log("Error loading the data");
+                console.error(error);
+            });
     </script>
     <style>
         .tooltip {
