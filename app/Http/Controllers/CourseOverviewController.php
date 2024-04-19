@@ -10,19 +10,44 @@ use App\Models\CourseDescription;
 class CourseOverviewController extends Controller
 {
     # Load course  overview page.
-    public  function index() {
-        # Join the course_description and join it with cricos
-        $courses = DB::table( 'course_description' )
-            ->join('cricos', 'cricos.course_name', '=', 'course_description.course_name')
-            ->select('course_description.course_name', 'category', 'course_single_desc')
-            ->get();
-        
-        # Select distinct values for categories
-        $distinctCategories = $courses->pluck('category')->unique();
+    public  function index(Request $request) {
+        if ($request->ajax()){
+            $course_name = $request->course_name;
+            $course_fields = $request->course_fields;
+            # Do the data filtering  and sorting here.
+            $query = CricosCourse::join('course_description', 'course_description.course_name', '=', 'cricos.course_name')
+                ->select('cricos.course_name', 'course_description.course_single_desc', 'cricos.category');
 
-        //dd($distinctCategories);
-        //dd($courses);
-        return view('course_overview', compact('courses', 'distinctCategories'));
+            
+            // If course fields are provided, apply additional filtering
+            if (!empty($course_fields)) {
+                // Find for the fields
+                $query->whereIn('cricos.category', $course_fields);
+            }
+
+            // If course search bar is not provided
+            if (!empty($course_name)){
+                // Find for the course name
+                $query->where('cricos.course_name', 'LIKE', '%' . $course_name . '%');
+            }
+
+            $courses = $query->select('cricos.course_name','course_description.course_single_desc')
+                ->distinct('cricos.course_name')
+                ->get();
+
+            # check if the data is found or not
+            if ($courses->isEmpty()) {
+                return response()->json(['message' => 'No courses found, please note this is Text Sensitive', 'data' => [], 'status' => 'empty'], 200);
+            }
+            return response()->json(['data' => $courses, 'status' => 'found'], 200);
+        
+        }else{
+            $courses = CourseDescription::select('course_name','course_single_desc')
+                ->get();
+            
+            //dd($courses);
+            return view('course_overview', compact('courses'));
+        }
     }
 
     # Load course  details by taking the course name as parameter.
