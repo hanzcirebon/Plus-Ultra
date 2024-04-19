@@ -35,4 +35,3 @@ Route::middleware('CheckGlobalPassword')->group(function(){
     Route::get('/search-job', [JobController::class, 'search_job'])->name('search-jobs');
     Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
 });
-
