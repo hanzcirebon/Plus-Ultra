@@ -15,7 +15,7 @@ class HomepageController extends Controller
     public function search_course(Request $request){
         $course_name = $request->input('course_name');
         #dd($course_name);
-        $courses = CourseDescription::select('course_name','course_single_desc')
+        $courses = CourseDescription::select('course_name','single_desc')
             ->where('course_name', 'LIKE','%' . $course_name . '%')
             ->get();
         #dd($courses);

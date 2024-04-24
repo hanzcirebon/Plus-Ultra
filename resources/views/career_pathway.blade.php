@@ -35,7 +35,7 @@
                 <div class="card" data-bss-hover-animate="pulse">
                     <a class="card-body p-4" style="text-decoration:none;" href="{{ route('courses-overview.detail', $course->course_name) }}">
                         <h4 class="card-title"><span style="color: rgb(124, 118, 187);">{{$course->course_name}}</span></h4>
-                        <p class="card-text" style="text-align: justify;">{{$course->course_single_desc}}</p>
+                        <p class="card-text" style="text-align: justify;">{{$course->single_desc}}</p>
                     </a>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                 <div class="card" data-bss-hover-animate="pulse">
                     <a class="card-body p-4" style="text-decoration:none;" href="{{ route('courses-overview.detail', $course->course_name) }}">
                         <h4 class="card-title"><span style="color: rgb(124, 118, 187);">{{$course->course_name}}</span></h4>
-                        <p class="card-text" style="text-align: justify;">{{$course->course_single_desc}}</p>
+                        <p class="card-text" style="text-align: justify;">{{$course->single_desc}}</p>
                     </a>
                 </div>
             </div>

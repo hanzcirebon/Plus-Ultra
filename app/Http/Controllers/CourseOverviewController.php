@@ -16,7 +16,7 @@ class CourseOverviewController extends Controller
             $course_fields = $request->course_fields;
             # Do the data filtering  and sorting here.
             $query = CricosCourse::join('course_description', 'course_description.course_name', '=', 'cricos.course_name')
-                ->select('cricos.course_name', 'course_description.course_single_desc', 'cricos.category');
+                ->select('cricos.course_name', 'course_description.single_desc', 'cricos.category');
 
             
             // If course fields are provided, apply additional filtering
@@ -31,7 +31,7 @@ class CourseOverviewController extends Controller
                 $query->where('cricos.course_name', 'LIKE', '%' . $course_name . '%');
             }
 
-            $courses = $query->select('cricos.course_name','course_description.course_single_desc')
+            $courses = $query->select('cricos.course_name','course_description.single_desc')
                 ->distinct('cricos.course_name')
                 ->get();
 
@@ -42,7 +42,7 @@ class CourseOverviewController extends Controller
             return response()->json(['data' => $courses, 'status' => 'found'], 200);
         
         }else{
-            $courses = CourseDescription::select('course_name','course_single_desc')
+            $courses = CourseDescription::select('course_name','single_desc')
                 ->get();
             
             //dd($courses);
@@ -53,20 +53,19 @@ class CourseOverviewController extends Controller
     # Load course  details by taking the course name as parameter.
     public function LoadCourseDesc(string $course_name) {
         # Join CRICOS and Course Description table
-        $course_details = CricosCourse::join('course_description','course_description.course_name','=','cricos.course_name')
+        $universities = CricosCourse::join('course_description','course_description.course_name','=','cricos.course_name')
             ->where('cricos.course_name','=',$course_name)
-            ->select('institution_name','duration_weeks','total_course_cost')
+            ->select('institution_name','duration_weeks','estimated_total_course_cost')
             ->distinct('institution_name')
             ->get();
         
         # Load the course description from Course Description Table.
-        $course_content = CourseDescription::select('course_name','course_desc')
-            ->where('course_name','=',$course_name)
+        $course_content = CourseDescription::where('course_name','=',$course_name)
             ->first();
 
-        //dd($course_details);
+        //dd($universities);
         //dd($course_content);
-        return view('course_overview_template', compact('course_details','course_content'));
+        return view('course_overview_template', compact('universities','course_content'));
     }
 
     public function filterCourses(Request $request) {

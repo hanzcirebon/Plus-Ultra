@@ -7,6 +7,7 @@ use App\Http\Controllers\CareerController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\GlobalTrendController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\QuestionsController;
 
 
 Route::get('/login', [LoginController::class, 'login'])->name('login');
@@ -34,4 +35,8 @@ Route::middleware('CheckGlobalPassword')->group(function(){
     Route::match(['get', 'post'], '/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');
     Route::get('/search-job', [JobController::class, 'search_job'])->name('search-jobs');
     Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
+
+    # Quick Questions
+    Route::get('/questions', [QuestionsController::class, 'index'])->name('quick-questions');
+    Route::post('/submit-answer', [QuestionsController::class, 'predict'])->name('predict');
 });

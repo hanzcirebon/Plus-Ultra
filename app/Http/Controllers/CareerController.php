@@ -20,7 +20,7 @@ class CareerController extends Controller
     public function LoadCareerDetails(string $category_name) {
         $courses = CourseDescription::leftJoin('cricos', 'course_description.course_name', '=', 'cricos.course_name')
             ->where('category', 'LIKE', '%' . $category_name . '%')
-            ->select('course_description.course_name', 'course_single_desc')
+            ->select('course_description.course_name', 'single_desc')
             ->distinct('cricos.course_name')
             ->take(6)
             ->get();

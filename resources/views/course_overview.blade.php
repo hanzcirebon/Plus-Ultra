@@ -75,7 +75,7 @@
                                 <h5 class="mb-0"><span style="color: rgb(255, 135, 176);">{{ $course->course_name }}</span></h5>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">{{ $course->course_single_desc }}</p>
+                                <p class="card-text">{{ $course->single_desc }}</p>
                             </div>
                         </a>
                         @endforeach
@@ -124,7 +124,7 @@
                                                         <h5 class="mb-0"><span style="color: rgb(255, 135, 176);">${course.course_name}</span></h5>
                                                     </div>
                                                     <div class="card-body">
-                                                        <p class="card-text">${course.course_single_desc}</p>
+                                                        <p class="card-text">${course.single_desc}</p>
                                                     </div>
                                                 </a>`;
                                 dataContainer.append(courseHtml);

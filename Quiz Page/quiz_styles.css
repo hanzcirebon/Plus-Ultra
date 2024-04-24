@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header nav ul li .active {
+    font-weight: bold;
+}
+
+main {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 5px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Color Definitions */
+#card1 {
+    background-color: #ADD8E6;
+}
+
+#card2 {
+    background-color: #F5DEB3;
+}
+
+#card3 {
+    background-color: #FFB6C1;
+}
+
+/* Dotted underline for the title */
+h1::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    padding-top: 5px;
+    border-bottom: 5px dotted black;
+}
+
+.survey-container {
+    background-color: #ADD8E6;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px #DBDBDB;
+}
+
+.survey-item {
+    background-color: #FDFDFD;
+    margin-bottom: 20px;
+    /* Increase spacing between questions */
+    padding: 15px;
+    /* Increase padding */
+    border: 1px solid #F2F1F1;
+    border-radius: 5px;
+}
+
+.survey-item input[type="radio"] {
+    display: none;
+    /* Hide the default radio button */
+}
+
+.survey-item label {
+    display: flex;
+    /* Each label on its own line */
+    margin-bottom: 10px;
+    /* Increase spacing between options */
+    font-size: 16px;
+    /* Increase font size */
+    color: #000;
+    padding: 8px;
+    border: 1px solid transparent;
+    /* Prepare for selection border */
+    border-radius: 5px;
+    border-bottom: 5px solid #DBDBDB;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    /* Smooth transition for color change */
+}
+
+.survey-item input[type="radio"]:checked+label {
+    background-color: #FFC3D7;
+    /* Background color for selected answer */
+    border-bottom-color: #e1f073;
+    /* Border color for selected answer */
+    border-right-color: #e1f073;
+}
+
+.survey-question {
+    font-weight: bold;
+    margin-bottom: 15px;
+    /* Increase spacing after question */
+    text-align: justify;
+    font-size: 18px;
+    /* Larger font size for questions */
+}
+
+.option-letter {
+    font-weight: bold;
+    margin-right: 30px;
+    width: 20px;
+}
+
+.input {
+    width: 100%; /* Adjusts the width to match the container */
+    min-height: 60px; /* Ensures the text area is taller, accommodating at least two lines of text */
+    background-color: #f5f5f5;
+    color: #242424;
+    padding: .15rem .5rem;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid transparent; /* Prepares a border that changes color on hover */
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+    resize: none; /* Disables resizing the text area */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.input:hover {
+    background-color: #e8e8e8; /* Lighter shade when hovered */
+    border-color: #999; /* Change border color to make it visible */
+}
+
+.input:focus {
+    background-color: #ffffff; /* Even lighter or different shade for focus */
+    border-color: #666; /* More pronounced border color when focused */
+    box-shadow: 0px 0px 8px #666; /* Adding a subtle shadow to indicate focus */
+}
+
+.quiz_form {
+    padding: 17px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: all 0.5s ease;
+}
+
+.quiz_form:hover {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.quiz_form:active {
+    letter-spacing: 3px;
+    background-color: hsl(261deg 80% 48%);
+    color: hsl(0, 0%, 100%);
+    box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+    transform: translateY(10px);
+    transition: 100ms;
+}
