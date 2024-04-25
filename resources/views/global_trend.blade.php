@@ -64,10 +64,21 @@
         </div>
     </div>
 
+    <h3 style="margin-top: 10px;text-align: center;"><span style="color: rgb(124, 118, 187);">Connection Betweeen Each </span><span style="color: rgb(255, 135, 176);">Skills and Technologies</span><span style="color: rgb(124, 118, 187);"> on Emerging Job Roles</span></h3>
+    <div class="container d-flex flex-column align-items-center py-4 py-xl-5">
+        <div class="row gy-4 w-100" style="max-width: 800px;">
+            <div class="col-12">
+                <div class="card">
+                <div id="hie-graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @include('footer')
     <script>
         // BAR CHART
-        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_data.json")
+        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_datav2.json")
             .then(function(data) {
                 // Process the data and create the bar chart
                 var margin = { top: 50, right: 10, bottom: 80, left: 125 }, // Modified margins
@@ -255,10 +266,13 @@
             });
 
         // NETWORK GRAPH
-        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_data.json")
+        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/job_datav2.json")
             .then(function(data) {
+                // Filter out the job title "Architect"
+                const filteredData = data.filter(job => job.job_title !== "Data Architect");
+
                 // Extract job titles and skills data
-                const jobData = data;
+                const jobData = filteredData;
 
                 // Define the number of top skills to display for each job title
                 const topSkillsCount = 10;
@@ -267,6 +281,12 @@
                 const nodes = [];
                 const links = [];
                 const skillCounts = {}; // Object to store the count of jobs for each skill
+                
+                // Define tooltip variable
+                const tooltip = d3.select("body").append("div")
+                    .attr("class", "tooltip-network")
+                    .style("opacity", 0);
+
                 jobData.forEach(job => {
                     // Sort skills by count in descending order and take top skills
                     const sortedSkills = Object.entries(job.count_skills)
@@ -279,15 +299,15 @@
                         const skillCount = skill[1];
                         if (!(skillName in skillCounts)) {
                             skillCounts[skillName] = 0;
+                            nodes.push({ id: skillName, type: 'skill', count: skillCount });
                         }
                         skillCounts[skillName]++;
-                        nodes.push({ id: skillName, type: 'skill', count: skillCount });
                         links.push({ source: job.job_title, target: skillName });
                     });
                 });
 
                 // Define SVG dimensions
-                const width = 750;
+                const width = 800;
                 const height = 600;
 
                 // Create SVG
@@ -295,6 +315,22 @@
                     .append("svg")
                     .attr("width", width)
                     .attr("height", height);
+
+                // Create gradient
+                const gradient = svg.append("defs")
+                    .append("linearGradient")
+                    .attr("id", "gradient")
+                    .attr("x1", "0%")
+                    .attr("y1", "0%")
+                    .attr("x2", "100%")
+                    .attr("y2", "100%");
+                
+                gradient.append("stop")
+                    .attr("offset", "0%")
+                    .style("stop-color", "#ff7f0e"); // Orange color
+                gradient.append("stop")
+                    .attr("offset", "100%")
+                    .style("stop-color", "#2ca02c"); // Green color
 
                 // Create group for zooming
                 const g = svg.append("g");
@@ -309,21 +345,21 @@
                 const link = g.selectAll(".link")
                     .data(links)
                     .enter().append("line")
-                    .attr("class", "link")
-                    .style("stroke", "#999") // Color of the links
-                    .style("stroke-width", 1); // Width of the links
+                    .attr("class", "link");
 
                 // Draw nodes
                 const node = g.selectAll(".node")
                     .data(nodes)
                     .enter().append("circle")
                     .attr("class", "node")
-                    .attr("r", d => Math.sqrt(d.count) / 2)
-                    .attr("fill", d => d.type === 'job' ? 'blue' : 'red')
+                    .attr("r", d => d.type === 'job' ? 8 : 5)
+                    .attr("class", d => d.type === 'job' ? 'job-node' : 'skill-node')
                     .call(d3.drag()
                         .on("start", dragstarted)
                         .on("drag", dragged)
-                        .on("end", dragended));
+                        .on("end", dragended))
+                    .on("mouseover", handleMouseOver)
+                    .on("mouseout", handleMouseOut);
 
                 // Add node labels
                 const label = g.selectAll(null)
@@ -331,7 +367,8 @@
                     .enter()
                     .append('text')
                     .text(d => d.id)
-                    .attr('font-size', 12);
+                    .attr('font-size', 12)
+                    .attr("class", d => d.type === 'job' ? 'job-label' : 'skill-label');
 
                 // Update node and link positions
                 simulation.on("tick", () => {
@@ -377,11 +414,138 @@
                     d.fx = null;
                     d.fy = null;
                 }
+
+                // Tooltip functions
+                function handleMouseOver(event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(d.id + "<br/>" + "Count: " + d.count)
+                        .style("left", (event.pageX) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                }
+
+                function handleMouseOut(d) {
+                    tooltip.transition()
+                        .duration(500)
+                        .style("opacity", 0);
+                }
             })
             .catch(function(error) {
                 console.log("Error loading the data");
                 console.error(error);
             });
+
+    // HIREARCHY GRAPH
+    
+    var diameter = 800,
+      radius = diameter / 2,
+      innerRadius = radius - 120;
+
+  var cluster = d3.cluster()
+      .size([360, innerRadius]);
+
+  var line = d3.radialLine()
+      .curve(d3.curveBundle.beta(0.85))
+      .radius(function(d) { return d.y; })
+      .angle(function(d) { return d.x / 180 * Math.PI; });
+
+  var svg = d3.select("#hie-graph").append("svg")
+      .attr("width", diameter)
+      .attr("height", diameter)
+    .append("g")
+      .attr("transform", "translate(" + radius + "," + radius + ")");
+
+  var link = svg.append("g").selectAll(".link-hie"),
+      node = svg.append("g").selectAll(".node-hie");
+
+  d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/skills_data.json").then(function(classes) {
+    var root = packageHierarchy(classes)
+        .sum(function(d) { return d.size; });
+
+    cluster(root);
+
+    link = link
+      .data(packageImports(root.leaves()))
+      .join("path")
+        .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+        .attr("class", "link-hie")
+        .attr("d", line);
+
+    node = node
+      .data(root.leaves())
+      .join("text")
+        .attr("class", "node-hie")
+        .attr("dy", "0.31em")
+        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+        .text(function(d) { return d.data.key; })
+        .on("mouseover", function(event, d) {
+          link.style('stroke-opacity', function(l) {
+              return l.source === d || l.target === d ? 0.9 : 0.1;
+          })
+          .classed("highlight", function(l) {
+              return l.source === d || l.target === d;
+          })
+          .classed("fade", function(l) {
+              return l.source !== d && l.target !== d;
+          });
+
+          d3.select(this).classed("highlight", true);
+
+          node.classed("highlight", function(n) {
+              return (this !== n && (d.data.imports.includes(n.data.name) || n.data.imports.includes(d.data.name)));
+          });
+        })
+        .on("mouseout", function(event, d) {
+          link.style('stroke-opacity', 0.5)
+          .classed("highlight", false)
+          .classed("fade", false);
+
+          node.classed("highlight", false);
+        });
+  });
+
+  function packageHierarchy(classes) {
+    var map = {};
+
+    function find(name, data) {
+      var node = map[name], i;
+      if (!node) {
+        node = map[name] = data || {name: name, children: []};
+        if (name.length) {
+          node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+          node.parent.children.push(node);
+          node.key = name.substring(i + 1);
+        }
+      }
+      return node;
+    }
+
+    classes.forEach(function(d) {
+      find(d.name, d);
+    });
+
+    return d3.hierarchy(map[""]);
+  }
+
+  function packageImports(nodes) {
+    var map = {},
+        imports = [];
+
+    nodes.forEach(function(d) {
+      map[d.data.name] = d;
+    });
+
+    nodes.forEach(function(d) {
+      if (d.data.imports) d.data.imports.forEach(function(i) {
+        imports.push(map[d.data.name].path(map[i]));
+      });
+    });
+
+    return imports;
+  }
+
     </script>
     <style>
         .tooltip {
@@ -396,6 +560,64 @@
         #wordcloud text {
             cursor: pointer;
         }
+
+        .tooltip-network {
+            position: absolute;
+            text-align: center;
+            padding: 6px;
+            font: 12px sans-serif;
+            background: #FFFFFF;
+            border: 1px solid #333;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        .job-node {
+            fill: #007bff; /* Blue color */
+        }
+
+        .skill-node {
+            fill: url(#gradient); /* Gradient fill */
+        }
+
+        .job-label {
+            fill: #007bff; /* Blue color */
+        }
+
+        .skill-label {
+            fill: black; /* Black color */
+        }
+
+        .link {
+            stroke: #ccc; /* Light gray color */
+            stroke-width: 1.5px;
+        }
+
+        .node-hie {
+        font: 10px sans-serif;
+    }
+
+    .link-hie {
+        stroke: steelblue;
+        stroke-opacity: 0.5;
+        fill: none;
+        pointer-events: none;
+    }
+
+    .link-hie.highlight {
+        stroke-opacity: 0.9;
+        stroke-width: 5px;
+    }
+
+    .link-hie.fade {
+        stroke-opacity: 0;
+    }
+
+    .node-hie.highlight {
+        font-weight: bold;
+        fill: rgb(255, 60, 0);
+        /* Or any color that stands out */
+    }
     </style>
     @include('script_js')
 </body>
