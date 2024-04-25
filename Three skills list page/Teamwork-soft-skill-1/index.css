@@ -251,3 +251,67 @@
     transform: scale(1.1);
   }
 }
+
+.button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.6em 2em;
+  border: rgba(124, 118, 187, 1) solid 0.15em;
+  margin-bottom: 20px;
+  border-radius: 0.25em;
+  color: rgba(124, 118, 187, 1);
+  font-size: 1.5em;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+}
+
+.button p {
+  z-index: 1;
+}
+
+.button:hover {
+  color: #212121;
+}
+
+.button:active {
+  border-color: rgba(124, 118, 187, 1);
+}
+
+.button::after, .button::before {
+  content: "";
+  position: absolute;
+  width: 9em;
+  aspect-ratio: 1;
+  background: rgba(124, 118, 187, 1);
+  opacity: 50%;
+  border-radius: 50%;
+  transition: transform 500ms, background 300ms;
+}
+
+.button::before {
+  left: 0;
+  transform: translateX(-8em);
+}
+
+.button::after {
+  right: 0;
+  transform: translateX(8em);
+}
+
+.button:hover:before {
+  transform: translateX(-1em);
+}
+
+.button:hover:after {
+  transform: translateX(1em);
+}
+
+.button:active:before,
+.button:active:after {
+  background: rgba(124, 118, 187, 1);
+}

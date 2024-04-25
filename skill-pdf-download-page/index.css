@@ -4,7 +4,17 @@
   overflow: auto;
   min-height: 100vh;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+}
+
+.home-group34006 {
+  width: 1440px;
+  height: 896px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
 }
 .skillupzone-skillupzone {
   width: 100%;
@@ -12,7 +22,8 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 1);
 }
@@ -313,4 +324,22 @@
   position: absolute;
   text-align: center;
   line-height: 139.9999976158142%;
+}
+
+.hovering {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hovering:hover {
+  animation: pulse 1s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
