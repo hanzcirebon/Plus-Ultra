@@ -4,13 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class QuestionsController extends Controller
 {
+    /**
+     * Return the the questions view page.
+     *
+     * @return view
+     */
     public function index() {
         return view('short_questions');
     }
 
+    /**
+     * Utilize the Recommendation Model API to get a list of recommended based on user input.
+     *
+     * @param Request $request
+     * @return view
+     */
     public function predict(Request $request){
         // the pre-defined skills
         $pre_skills = [];
@@ -36,23 +48,24 @@ class QuestionsController extends Controller
         // Combine all skills into a single string separated by commas
         $skillsString = implode(',', $skills);
 
-
         // Call the API
         $url = 'https://it-explore-39fbb6c0ac8f.herokuapp.com/it-explore-recommendation/lmao?user_skill_input=' . $skillsString;
         $response = Http::get($url);
-        
-        dd($response->body());
 
         // Handle the API response
         if ($response->successful()) {
-            $apiResponse = $response->body(); // or $response->json() if JSON response
-            // Process the response as needed
-        } else {
-            // Handle error
-            $apiResponse = 'API call failed';
+            $apiResponse = $response->json(); // or $response->json() if JSON response
+            $dataToStore = [
+                'job_title' => $apiResponse[0]['job_title'], // Example key
+                'similarity' => $apiResponse[0]['similarity'] // Example key
+            ];
+            Session::put('recommendation_result', $dataToStore);
+            $message = 'success';
+        }else{
+            $message = 'failed';
         }
-
-        return 0;
+        //dd($dataToStore['job_title']);
+        return redirect(route('quick-questions'))->with('message', $message);
     }
 
     /**
@@ -70,5 +83,16 @@ class QuestionsController extends Controller
         $text = preg_replace('/\s+/', ' ', $text);
 
         return $text;
+    }
+
+    /**
+     * Show recommendation page.
+     *
+     * @return view
+     */
+    public function showRecommendation(){
+        $data = Session::get('recommendation_result');
+
+        return view('recommendation_view', compact('data'));
     }
 }

@@ -16,15 +16,49 @@
                 <div class="icon">1</div>
                 <p>Complete the Test</p>
             </div>
+            @if(session('recommendation_result'))
+            <!-- Check for recommendation session -->
+            <a class="card" id="card2" href="{{ route('recommendation') }}">
+                <div class="icon">2</div>
+                <p>View Recommends</p>
+            </a>
+            @else
             <div class="card" id="card2">
                 <div class="icon">2</div>
                 <p>View Recommends</p>
             </div>
+            @endif
             <div class="card" id="card3">
                 <div class="icon">3</div>
                 <p>Unlock Your IT Future</p>
             </div>
         </div>
+
+        <div class="container">
+            @if(session('message'))
+                @if(session('message') == "success")
+                <div
+                    class="alert alert-success"
+                    role="alert"
+                >
+                    <h4 class="alert-heading">Congratulations !</h4>
+                    <p>
+                        Your recommendation successfully being generated<br>
+                        Pleaase take a look in View Recommendation page.
+                    </p>
+                </div>
+                @elseif(session('message') == "failed")
+                <div
+                    class="alert alert-danger"
+                    role="alert"
+                >
+                    <h4 class="alert-heading">Oops !!</h4>
+                    <p>Failed to get the prediction</p>
+                </div>
+                @endif
+            @endif
+        </div>
+
         <form action="{{ route('predict') }}" method="post">
             @csrf
             <div class="survey-container">

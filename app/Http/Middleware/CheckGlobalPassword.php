@@ -11,7 +11,9 @@ class CheckGlobalPassword
     public function handle(Request $request, Closure $next): Response
     {
         // check if user is authenticated
-        if($request->session()->get('is_authenticated', false) || (env('APP_STATUS') === "development")) {
+        if ((env('APP_STATUS') === "development")){
+            return $next($request);
+        }elseif($request->session()->get('is_authenticated', false)) {
             return $next($request);
         } else {
             // not authenticated, redirect to login page
