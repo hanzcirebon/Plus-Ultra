@@ -617,6 +617,8 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
   background-color: rgba(35, 189, 238, 0.8999999761581421);
 }
 .sk06-text53 {
@@ -643,6 +645,8 @@
   position: absolute;
   align-items: flex-start;
   flex-shrink: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease;
   background-color: rgba(35, 189, 238, 0.8999999761581421);
 }
 .sk06-text55 {
@@ -724,4 +728,22 @@
   width: 266px;
   height: 257px;
   position: absolute;
+}
+
+.hovering {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hovering:hover {
+  animation: pulse 1s ease-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
