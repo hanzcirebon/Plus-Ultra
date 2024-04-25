@@ -243,7 +243,7 @@
             <span>Soft Skills Revealed: The Secret to Becoming a
               Top Talent</span>
           </span>
-          <a href="{{asset('Soft Skills.pdf')}}"><img src="{{asset('fuckin_shit/rectangle1226411-6eo7.svg')}}"
+          <a href="{{asset('Soft skills.pdf')}}"><img src="{{asset('fuckin_shit/rectangle1226411-6eo7.svg')}}"
               alt="Rectangle1226411" class="skillupzone-rectangle122 hovering" />
             <span class="skillupzone-text56 bodylargebold hovering"><span>DOWNLOAD
                 HERE</span></span></a>
