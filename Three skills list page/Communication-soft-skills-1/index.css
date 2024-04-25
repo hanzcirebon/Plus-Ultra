@@ -6,19 +6,40 @@
   align-items: center;
   flex-direction: column;
 }
+.home-group34006 {
+  width: 1440px;
+  height: 896px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
 .home-sk04 {
-  width: 100%;
+  top: 0px;
+  left: 0px;
+  width: 1440px;
   height: 896px;
   display: flex;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   align-items: flex-start;
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 1);
 }
 .home-bottle-png20732 {
   top: 173px;
-  left: 151px;
+  left: 151px;.home-sk02 {
+  top: 0px;
+  left: 0px;
+  width: 1440px;
+  height: 896px;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
   width: 90px;
   height: 301px;
   position: absolute;
