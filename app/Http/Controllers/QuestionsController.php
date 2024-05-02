@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 
+use App\Models\JobPredContent;
+
 class QuestionsController extends Controller
 {
     /**
@@ -54,10 +56,19 @@ class QuestionsController extends Controller
 
         // Handle the API response
         if ($response->successful()) {
-            $apiResponse = $response->json(); // or $response->json() if JSON response
+            $apiResponse = $response->json();
+            $job_title = $apiResponse[0]['job_title'];
+
+            // Call the database with the matching job title
+            $matchingJobs = JobPredContent::where('job', 'LIKE', '%' . $job_title . '%')
+                                ->select('job_description', 'required_skills')
+                                ->first();
+
+            // dd($matchingJobs['required_skills']);
             $dataToStore = [
-                'job_title' => $apiResponse[0]['job_title'], // Example key
-                'similarity' => $apiResponse[0]['similarity'] // Example key
+                'job_title' => $job_title,
+                'job_description' => $matchingJobs['job_description'],
+                'required_skills' => $matchingJobs['required_skills']
             ];
             Session::put('recommendation_result', $dataToStore);
             $message = 'success';

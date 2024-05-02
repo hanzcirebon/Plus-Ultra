@@ -54,7 +54,7 @@
                             <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Skills Acquired</span></strong></h4>
                             <div id="skills-acquired-info" class="hidden-info">
                                 <!-- Detailed information about skills acquired -->
-                                <p>{{!!$course_content->list_student_outcomes!!}}</p>
+                                <p>{!!$course_content->list_student_outcomes!!}</p>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Career Pathways</span></strong></h4>
                             <div id="career-pathway-info" class="hidden-info">
                                 <!-- Detailed information about the course -->
-                                <p>{{!!$course_content->list_possible_jobs!!}}</p>
+                                <p>{!!$course_content->list_possible_jobs!!}</p>
                             </div>
                         </div>
                     </div>
