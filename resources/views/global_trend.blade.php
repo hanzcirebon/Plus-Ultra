@@ -436,115 +436,115 @@
                 console.error(error);
             });
 
-    // HIREARCHY GRAPH
+        // HIREARCHY GRAPH
     
-    var diameter = 800,
-      radius = diameter / 2,
-      innerRadius = radius - 120;
+        var diameter = 800,
+        radius = diameter / 2,
+        innerRadius = radius - 120;
 
-  var cluster = d3.cluster()
-      .size([360, innerRadius]);
+        var cluster = d3.cluster()
+            .size([360, innerRadius]);
 
-  var line = d3.radialLine()
-      .curve(d3.curveBundle.beta(0.85))
-      .radius(function(d) { return d.y; })
-      .angle(function(d) { return d.x / 180 * Math.PI; });
+        var line = d3.radialLine()
+            .curve(d3.curveBundle.beta(0.85))
+            .radius(function(d) { return d.y; })
+            .angle(function(d) { return d.x / 180 * Math.PI; });
 
-  var svg = d3.select("#hie-graph").append("svg")
-      .attr("width", diameter)
-      .attr("height", diameter)
-    .append("g")
-      .attr("transform", "translate(" + radius + "," + radius + ")");
+        var svg = d3.select("#hie-graph").append("svg")
+            .attr("width", diameter)
+            .attr("height", diameter)
+            .append("g")
+            .attr("transform", "translate(" + radius + "," + radius + ")");
 
-  var link = svg.append("g").selectAll(".link-hie"),
-      node = svg.append("g").selectAll(".node-hie");
+        var link = svg.append("g").selectAll(".link-hie"),
+            node = svg.append("g").selectAll(".node-hie");
 
-  d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/skills_data.json").then(function(classes) {
-    var root = packageHierarchy(classes)
-        .sum(function(d) { return d.size; });
+        d3.json("https://raw.githubusercontent.com/hanzcirebon/test/main/skills_data.json").then(function(classes) {
+            var root = packageHierarchy(classes)
+                .sum(function(d) { return d.size; });
 
-    cluster(root);
+            cluster(root);
 
-    link = link
-      .data(packageImports(root.leaves()))
-      .join("path")
-        .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
-        .attr("class", "link-hie")
-        .attr("d", line);
+            link = link
+            .data(packageImports(root.leaves()))
+            .join("path")
+                .each(function(d) { d.source = d[0], d.target = d[d.length - 1]; })
+                .attr("class", "link-hie")
+                .attr("d", line);
 
-    node = node
-      .data(root.leaves())
-      .join("text")
-        .attr("class", "node-hie")
-        .attr("dy", "0.31em")
-        .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
-        .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
-        .text(function(d) { return d.data.key; })
-        .on("mouseover", function(event, d) {
-          link.style('stroke-opacity', function(l) {
-              return l.source === d || l.target === d ? 0.9 : 0.1;
-          })
-          .classed("highlight", function(l) {
-              return l.source === d || l.target === d;
-          })
-          .classed("fade", function(l) {
-              return l.source !== d && l.target !== d;
-          });
+            node = node
+            .data(root.leaves())
+            .join("text")
+                .attr("class", "node-hie")
+                .attr("dy", "0.31em")
+                .attr("transform", function(d) { return "rotate(" + (d.x - 90) + ")translate(" + (d.y + 8) + ",0)" + (d.x < 180 ? "" : "rotate(180)"); })
+                .attr("text-anchor", function(d) { return d.x < 180 ? "start" : "end"; })
+                .text(function(d) { return d.data.key; })
+                .on("mouseover", function(event, d) {
+                link.style('stroke-opacity', function(l) {
+                    return l.source === d || l.target === d ? 0.9 : 0.1;
+                })
+                .classed("highlight", function(l) {
+                    return l.source === d || l.target === d;
+                })
+                .classed("fade", function(l) {
+                    return l.source !== d && l.target !== d;
+                });
 
-          d3.select(this).classed("highlight", true);
+                d3.select(this).classed("highlight", true);
 
-          node.classed("highlight", function(n) {
-              return (this !== n && (d.data.imports.includes(n.data.name) || n.data.imports.includes(d.data.name)));
-          });
-        })
-        .on("mouseout", function(event, d) {
-          link.style('stroke-opacity', 0.5)
-          .classed("highlight", false)
-          .classed("fade", false);
+                node.classed("highlight", function(n) {
+                    return (this !== n && (d.data.imports.includes(n.data.name) || n.data.imports.includes(d.data.name)));
+                });
+                })
+                .on("mouseout", function(event, d) {
+                link.style('stroke-opacity', 0.5)
+                .classed("highlight", false)
+                .classed("fade", false);
 
-          node.classed("highlight", false);
+                node.classed("highlight", false);
+                });
         });
-  });
 
-  function packageHierarchy(classes) {
-    var map = {};
+        function packageHierarchy(classes) {
+            var map = {};
 
-    function find(name, data) {
-      var node = map[name], i;
-      if (!node) {
-        node = map[name] = data || {name: name, children: []};
-        if (name.length) {
-          node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
-          node.parent.children.push(node);
-          node.key = name.substring(i + 1);
+            function find(name, data) {
+            var node = map[name], i;
+            if (!node) {
+                node = map[name] = data || {name: name, children: []};
+                if (name.length) {
+                node.parent = find(name.substring(0, i = name.lastIndexOf(".")));
+                node.parent.children.push(node);
+                node.key = name.substring(i + 1);
+                }
+            }
+            return node;
+            }
+
+            classes.forEach(function(d) {
+            find(d.name, d);
+            });
+
+            return d3.hierarchy(map[""]);
         }
-      }
-      return node;
-    }
 
-    classes.forEach(function(d) {
-      find(d.name, d);
-    });
+        function packageImports(nodes) {
+            var map = {},
+                imports = [];
 
-    return d3.hierarchy(map[""]);
-  }
+            nodes.forEach(function(d) {
+            map[d.data.name] = d;
+            });
 
-  function packageImports(nodes) {
-    var map = {},
-        imports = [];
+            nodes.forEach(function(d) {
+            if (d.data.imports) d.data.imports.forEach(function(i) {
+                imports.push(map[d.data.name].path(map[i]));
+            });
+            });
 
-    nodes.forEach(function(d) {
-      map[d.data.name] = d;
-    });
-
-    nodes.forEach(function(d) {
-      if (d.data.imports) d.data.imports.forEach(function(i) {
-        imports.push(map[d.data.name].path(map[i]));
-      });
-    });
-
-    return imports;
-  }
+            return imports;
+        }
 
     </script>
     <style>
@@ -595,29 +595,28 @@
 
         .node-hie {
         font: 10px sans-serif;
-    }
+        }
 
-    .link-hie {
-        stroke: steelblue;
-        stroke-opacity: 0.5;
-        fill: none;
-        pointer-events: none;
-    }
+        .link-hie {
+            stroke: steelblue; /* Hie graph Line color*/
+            stroke-opacity: 0.5;
+            fill: none;
+            pointer-events: none;
+        }
 
-    .link-hie.highlight {
-        stroke-opacity: 0.9;
-        stroke-width: 5px;
-    }
+        .link-hie.highlight {
+            stroke-opacity: 0.9;
+            stroke-width: 5px;
+        }
 
-    .link-hie.fade {
-        stroke-opacity: 0;
-    }
+        .link-hie.fade {
+            stroke-opacity: 0;
+        }
 
-    .node-hie.highlight {
-        font-weight: bold;
-        fill: rgb(255, 60, 0);
-        /* Or any color that stands out */
-    }
+        .node-hie.highlight {
+            font-weight: bold;
+            fill: rgb(255, 60, 0); /* Hie graph Text Colour */
+        }
     </style>
     @include('script_js')
 </body>

@@ -6,10 +6,11 @@ let loopNum = 0;
 let text = '';
 let isDeleting = false;
 let delta = 300 - Math.random() * 100;
-console.log('hello')
+
 function tick() {
   const i = loopNum % toRotate.length;
   const fullText = toRotate[i];
+
   if (isDeleting) {
     text = fullText.substring(0, text.length - 1);
   } else {

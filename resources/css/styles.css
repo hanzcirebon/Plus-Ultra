@@ -2,3 +2,215 @@
   width: 100%;
   min-width: 100vh;
 }
+
+.text-interact{
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7c76bb;
+}
+
+.banner h1 {
+  font-size: 2rem;
+  filter: blur(2px); /* This will add a blur effect */
+}
+
+#dynamic-text {
+  color: #ff87b0; /* Or any color you want */
+}
+
+.cursor {
+  border-right: 0.1em solid #00ffae;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+footer {
+  position: relative;
+  background: rgb(173,168,214);
+  background: linear-gradient(0deg, rgba(173,168,214,1) 0%, rgba(189,202,242,1) 100%);
+  color: white;
+  padding: 40px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Prevents shapes from causing scroll */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.footer-container::before, .footer-bottom::before {
+  content: "";
+  position: absolute;
+  background-color: #665687;
+}
+
+.footer-container::before {
+  width: 150px;
+  height: 100px;
+  top: -50px;
+  left: -50px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.footer-logo img {
+  width: 100px;
+}
+
+.footer-content h2 {
+  margin-top: 20px;
+  color: #7c76bb;
+}
+
+.footer-content p {
+  color: white;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+#exploreButton {
+  background-color: #665687;
+  border: none;
+  padding: 15px 30px; /* Increased padding for better touch target */
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 30px; /* Increased top margin as requested */
+  transition: background-color 0.3s ease;
+}
+
+#exploreButton:hover {
+  background-color: #8072a8;
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  position: relative;
+}
+
+.footer-bottom::before {
+  width: 200px;
+  height: 150px;
+  bottom: -75px;
+  right: -100px;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.footer-bottom p {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+  }
+
+  .footer-container::before {
+      top: -25px; /* Adjusted for mobile */
+      left: 20px; /* Adjusted for mobile */
+      width: 100px; /* Adjusted for mobile */
+      height: 70px; /* Adjusted for mobile */
+  }
+
+  .footer-content p {
+      margin: 10px 20px; /* Added side margins for better text readability */
+  }
+
+  .footer-bottom::before {
+      bottom: -50px; /* Adjusted for mobile */
+      right: 20px; /* Adjusted for mobile */
+      width: 100px; /* Adjusted for mobile */
+      height: 70px; /* Adjusted for mobile */
+  }
+
+  .footer-bottom p {
+      font-size: 0.7rem; /* Smaller font size for mobile */
+  }
+}
+
+/* Star styles */
+.footer-container::after, .footer-bottom::after {
+  content: "★";
+  position: absolute;
+  color: #ffd700;
+  font-size: 2rem;
+  z-index: 0;
+}
+
+.footer-container::after {
+  top: 10px;
+  right: 30%;
+}
+
+.footer-bottom::after {
+  bottom: 10px;
+  left: 40%;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid #222325; /* Increased border thickness */
+  border-radius: 25px;
+  box-shadow: 4px 4px 0px 0px #e1f073; /* Added yellow border shadow on right and bottom */
+  background-color: #fff;
+  margin: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-container:hover {
+  box-shadow: 6px 6px 0px 0px #ffcc00; /* Slightly larger shadow on hover for a dynamic effect */
+}
+
+.search-input {
+  padding: 10px 15px;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  background-color: #f5f5f5; /* Adjust the input background color as needed */
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-btn {
+  padding: 10px 20px;
+  background-color: #8c7ae6;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #7f8fa6;
+}
