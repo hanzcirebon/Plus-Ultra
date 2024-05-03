@@ -594,19 +594,19 @@
         }
 
         .node-hie {
-        font: 10px sans-serif;
+            font: 10px sans-serif;
         }
 
         .link-hie {
-            stroke: steelblue; /* Hie graph Line color*/
+            stroke: steelblue;
             stroke-opacity: 0.5;
             fill: none;
             pointer-events: none;
         }
 
         .link-hie.highlight {
-            stroke-opacity: 0.9;
-            stroke-width: 5px;
+            stroke-opacity: 0.5;
+            stroke-width: 3px;
         }
 
         .link-hie.fade {
@@ -615,7 +615,8 @@
 
         .node-hie.highlight {
             font-weight: bold;
-            fill: rgb(255, 60, 0); /* Hie graph Text Colour */
+            fill: rgb(0, 72, 255);
+            /* Or any color that stands out */
         }
     </style>
     @include('script_js')

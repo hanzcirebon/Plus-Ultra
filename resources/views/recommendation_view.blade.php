@@ -17,39 +17,38 @@
                     It is recommended that you further explore <span style="color: rgb(255, 135, 176);">{{$data['job_title']}}</span> disciplines and careers to better develop your potential
                 </b></p>
             </div>
-            <div class="row content-img">
+            {{-- <div class="row content-img">
                 <img src="https://placehold.co/600x400" alt="placeholder">
-            </div>
+            </div> --}}
         </div>
         <!-- CONTENT 1 -->
         <div id="content2" class="text-center align-items-center content">
             <div class="row">
-                <h1>Recommendation</h1>
+                <h1>Job Description</h1>
             </div>
             <div class="row">
                 <p><b>
-                    Taken together, you haave shown a certain interest an willingneess in Artificial Intelligence.<br>
-                    It is recommended that you further explore AI-related disciplines and careers to better develop your potential
+                    {{$data['job_description']}}
                 </b></p>
             </div>
-            <div class="row content-img">
+            {{-- <div class="row content-img">
                 <img src="https://placehold.co/600x400" alt="placeholder">
-            </div>
+            </div> --}}
         </div>
         <!-- CONTENT 1 -->
-        <div id="content3" class="text-center align-items-center content">
-            <div class="row">
-                <h1>Career Pathway</h1>
+        <div id="content3" class="align-items-center content">
+            <div class="row text-center">
+                <h1>Job Pathway</h1>
             </div>
             <div class="row">
                 <p><b>
-                    Taken together, you haave shown a certain interest an willingneess in Artificial Intelligence.<br>
-                    It is recommended that you further explore AI-related disciplines and careers to better develop your potential
+                    {{-- {{dd($data['required_skills'])}} --}}
+                    {!!$data['required_skills']!!}
                 </b></p>
             </div>
-            <div class="row content-img">
+            {{-- <div class="row content-img">
                 <img src="https://placehold.co/600x400" alt="placeholder">
-            </div>
+            </div> --}}
         </div>
         
         <div class="row justify-content-between">

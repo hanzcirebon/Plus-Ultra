@@ -28,10 +28,10 @@
                 <p>View Recommends</p>
             </div>
             @endif
-            <div class="card" id="card3">
+            {{-- <div class="card" id="card3">
                 <div class="icon">3</div>
                 <p>Unlock Your IT Future</p>
-            </div>
+            </div> --}}
         </div>
 
         <div class="container">
@@ -44,7 +44,7 @@
                     <h4 class="alert-heading">Congratulations !</h4>
                     <p>
                         Your recommendation successfully being generated<br>
-                        Pleaase take a look in View Recommendation page.
+                        Please take a look in View Recommendation page.
                     </p>
                 </div>
                 @elseif(session('message') == "failed")
@@ -119,7 +119,7 @@
 
                 <!-- Survey question 5 -->
                 <div class="survey-item">
-                    <div class="survey-question">5. What kind of tasks do you excel at?</div>
+                    <div class="survey-question">5. What kind of tasks do you good at?</div>
                     <input type="radio" id="q5a" name="question5" value="sql">
                         <label for="q5a"><span class="option-letter">A</span>Analyzing data and finding patterns </label>
                     <input type="radio" id="q5b" name="question5" value="leadership">
@@ -182,7 +182,7 @@
                         <label for="q9d"><span class="option-letter">D</span>By collaborating with others and sharing ideas</label>
                 </div>
 
-                <!-- Survey question 10 -->
+                {{-- <!-- Survey question 10 -->
                 <div class="survey-item">
                     <div class="survey-question">10. Do you have any technical skills that you want to mention (e.g., python, machine learning, analysis, etc.)? If yes, please fill the text field below with the skills that you want to mention, and separate them with a comma. <br>Example: “python, machine learning, C++”</div>
                     <textarea class="input" type="text" id="q10" name="question10" placeholder="Enter your technical skills, separated by commas"></textarea>
@@ -192,7 +192,7 @@
                 <div class="survey-item">
                     <div class="survey-question">11. Do you have any soft skills that you want to mention (e.g., leadership, communication, teamwork, etc.)? If yes, please fill the text field below with the soft skills that you want to mention, and separate them with a comma. <br>Example: “leadership, communication, teamwork, analysis”</div>
                     <textarea class="input" type="text" id="q11" name="question11" placeholder="Enter your soft skills, separated by commas"></textarea>
-                </div>
+                </div> --}}
 
                 <button class="quiz_form" type="submit">Submit</button>
 
