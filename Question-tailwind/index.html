@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Theme Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .selected {
+            background-color: #FFC3D7 !important; /* Important to override other styles */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <div class="space-y-4 mb-8">
+        <div class="flex space-x-4">
+            <div class="cursor-pointer transition-transform transform hover:scale-105 p-6 bg-blue-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="startQuiz()">
+                <div class="text-lg font-semibold text-blue-900">1</div>
+                <p class="text-blue-900">Complete the Test</p>
+            </div>
+            <div class="cursor-pointer transition-transform transform hover:scale-105 p-6 bg-yellow-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="viewRecommendations()">
+                <div class="text-lg font-semibold text-yellow-900">2</div>
+                <p class="text-yellow-900">View Recommends</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-full max-w-xl p-5 bg-white rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold text-center mb-4">Welcome to the Fun Quiz!</h1>
+        <p class="text-gray-700 text-md mb-6 text-center">Test your knowledge with our quick and fun quiz. Let's see how much you know!</p>
+        <div id="question-container" class="flex flex-col space-y-4">
+            <!-- Question will be injected here -->
+        </div>
+        <div class="flex justify-between mt-6">
+            <button id="prev-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="prevQuestion()">Previous</button>
+            <button id="submit-btn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hidden" onclick="submitQuiz()">Submit</button>
+            <button id="next-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "Which activity do you enjoy the most?", options: ["Solving puzzles and brain teasers", "Playing video games", "Exploring new software or apps", "Analyzing data or graphs"] },
+            { question: "What do you find most intriguing?", options: ["Understanding complex systems", "Creatively expressing ideas", "Designing and building projects", "Working with numbers and patterns"] },
+            { question: "Which subject are you most comfortable with?", options: ["Mathematics", "Computer Subject", "Art or design", "Economics or business","Science (physic, biology, chemistry)"] },
+            { question: "When faced with a problem, how do you prefer to approach it?", options: ["Break it down into smaller parts and analyze each part", "Experiment with different solutions until one works", "Plan and organize a structured solution", "Follow a set of rules or guidelines to solve it"] },
+            { question: "What kind of tasks do you good at?", options: ["Analyzing data and finding patterns", "Generating new ideas or concepts", "Writing code or programming", "Designing user interfaces or experiences"] },
+            { question: "Which skill do you think is most important for success in the modern world?", options: ["Critical thinking and problem-solving", "Creativity and innovation", "Technical skills like coding or software development", "Communication and collaboration"] },
+            { question: "What interests you the most about technology?", options: ["Building and programming machines", "Creating visually appealing content", "Analyzing data to uncover insights", "Exploring new ways to connect people"] },
+            { question: "Which project would you be most excited to work on?", options: ["Developing a new mobile app", "Designing a virtual reality game", "Analyzing real-world datasets to solve a problem", "Building a scalable cloud infrastructure"] },
+            { question: "How do you prefer to learn new things?", options: ["Through hands-on experimentation and trial-and-error", "By studying theories and concepts", "Through interactive tutorials or online courses", "By collaborating with others and sharing ideas"] }
+        ];
+        let currentQuestion = 0;
+
+        function displayQuestion() {
+            const questionContainer = document.getElementById('question-container');
+            questionContainer.innerHTML = `<div class="text-lg font-semibold">${questions[currentQuestion].question}</div>
+            <div class="flex flex-col space-y-2">
+                ${questions[currentQuestion].options.map((option, index) => `<button class="text-white bg-gray-800 hover:bg-gray-600 py-2 px-4 rounded" onclick="selectOption(this)">${option}</button>`).join('')}
+            </div>`;
+
+            if (currentQuestion === questions.length - 1) {
+                document.getElementById('next-btn').classList.add('hidden');
+                document.getElementById('submit-btn').classList.remove('hidden');
+            } else {
+                document.getElementById('next-btn').classList.remove('hidden');
+                document.getElementById('submit-btn').classList.add('hidden');
+            }
+        }
+
+        function selectOption(selectedElement) {
+            const options = document.querySelectorAll('#question-container button');
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            selectedElement.classList.add('selected');
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                displayQuestion();
+            }
+        }
+
+        function submitQuiz() {
+            alert('Congratulations! You have submitted the quiz.');
+        }
+
+        function startQuiz() {
+            displayQuestion();
+        }
+
+        function viewRecommendations() {
+            alert('This feature is coming soon!');
+        }
+
+        window.onload = () => displayQuestion();
+    </script>
+</body>
+</html>
