@@ -1,4 +1,4 @@
-<footer class="max-w-full bg-gradient-to-r from-violet-200 to-pink-200 p-16">
+<footer class="max-w-full bg-gradient-to-r from-violet-200 to-pink-200 p-16 mt-32">
     <div class="flex flex-col justify-center items-center">
         <div class="footer-content text-center pb-5">
             <h2 class="text-4xl text-purple_template font-semibold pb-5">Explore your IT future Now! ✨</h2>

@@ -1,138 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<header>
-    @include('header')
-</header>
-
-<body>
-    @include('navbar')
-
-    <section class="article-dual-column">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <div class="intro">
-                        <h1 class="text-center" id="inceput-1" style="font-family: Roboto, sans-serif;"><span style="color: rgb(255, 135, 176);">{{$course_content->course_name}}</span></h1>
-                        <p class="text-center"> </p><img class="img-fluid" src="{{ asset('img/Slider_2.webp') }}" style="width: 670px;height: 434.388px;">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 col-lg-3 offset-md-1">
-                    <div class="toc">
-                        <p>Quick Links</p>
-                        <ul>
-                            <li id="inceput-2"><a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities">University List</a> </li>
-                            <li id="detaliitehnice-1"><a href="#Offering-universities">Offering University</a></li>
-                            <li id="detaliitehnice-1"><a href="https://www.studyassist.gov.au/you-study/how-get-higher-education">How to get into higher education</a></li>
-                        </ul>
-                    </div>
-                </div>
+<x-mainLayout>
+    <div>
+        <div class="flex flex-col justify-center items-center mb-10">
+            <div class="text-center">
+                <h1 class="text-pink_template text-3xl font-semibold mb-5">{{$course_content->course_name}}</h1>
+                <img class="h-96" src="{{ asset('img/Slider_2.webp') }}">
             </div>
         </div>
-        <div class="container">
+        <div class="flex justify-evenly">
+            <div class="text-gray-700">
+                <span>Quick Links:</span>
+                <ul class="list-disc list-inside">
+                    <li>
+                        <a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities" class="hover:underline">University List</a>
+                    </li>
+                    <li>
+                        <a href="https://www.studyassist.gov.au/you-study/how-get-higher-education" class="hover:underline">How to get into higher education</a>
+                    </li>
+                </ul>
+            </div>
             <!-- Card for Course Description -->
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom: 19px;">
-                    <div class="card border-secondary border-2 shadow-lg info-card" style="margin-top: 16px;" id="course-description">
-                        <div class="card-body" style="margin-top: 20px;margin-bottom: 40px;">
-                            <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Course Description</span></strong></h4>
-                            <div id="course-description-info" class="hidden-info">
-                                <!-- Detailed information about the course -->
-                                <p>{{$course_content->course_description}}</p>
-                            </div>
+            <div class="flex flex-col gap-5">
+                {{-- COURSE DESCRIPTION --}}
+                <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="course-description">
+                    <div class="px-5 py-5">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-purple_template text-2xl text-center font-semibold">
+                                Course Description
+                            </h4>
+                            <button id="expand-btn" class="text-2xl font-semibold focus:outline-none transition-transform transform duration-300">+</button>
+                        </div>
+                        <div id="course-description-info" class="hidden-info pt-5">
+                            <p>{{$course_content->course_description}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Card for Skills Acquired -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card border-secondary border rounded border-2 shadow info-card" id="skills-acquired">
-                        <div class="card-body border rounded border-2 border-light-subtle shadow-sm">
-                            <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Skills Acquired</span></strong></h4>
-                            <div id="skills-acquired-info" class="hidden-info">
-                                <!-- Detailed information about skills acquired -->
-                                <p>{!!$course_content->list_student_outcomes!!}</p>
-                            </div>
+                {{-- SKILLS ACQUIRED --}}
+                <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="skills-acquired">
+                    <div class="px-5 py-5">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-purple_template text-2xl text-center font-semibold">Skills Acquired</h4>
+                            <button id="expand-btn" class="text-2xl font-semibold focus:outline-none transition-transform transform duration-300">+</button>
+                        </div>
+                        <div id="skills-acquired-info" class="hidden-info pt-5">
+                            <!-- Detailed information about skills acquired -->
+                            {!!$course_content->list_student_outcomes!!}
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row" style="margin-top: 18px;">
-                <div class="col-md-12" style="margin-bottom: 19px;">
-                    <div class="card border-secondary border-2 shadow info-card" style="padding-bottom: 0px;" id="career-pathway">
-                        <div class="card-body" style="margin-top: 20px;margin-bottom: 40px;">
-                            <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Career Pathways</span></strong></h4>
-                            <div id="career-pathway-info" class="hidden-info">
-                                <!-- Detailed information about the course -->
-                                <p>{!!$course_content->list_possible_jobs!!}</p>
-                            </div>
+                {{-- CAREER PATHWAY --}}
+                <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="career-pathway">
+                    <div class="px-5 py-5">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-purple_template text-2xl text-center font-semibold">Career Pathways</h4>
+                            <button id="expand-btn" class="text-2xl font-semibold focus:outline-none transition-transform transform duration-300">+</button>
+                        </div>
+                        <div id="career-pathway-info" class="hidden-info pt-5">
+                            <!-- Detailed information about the course -->
+                            <p>{!!$course_content->list_possible_jobs!!}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom: 22px;" >
-                    <div class="card border-secondary border-2 shadow focus-ring info-card" id="isit-foryou">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Is It For You ?</span></strong></h4>
-                            <div id="isit-foryou-info" class="hidden-info">
-                                <!-- Detailed information about the course -->
-                                <p>{{$course_content->is_it_for_you}}</p>
-                            </div>
+                {{-- IS IT FOR YOU --}}
+                <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="isit-foryou">
+                    <div class="px-5 py-5">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-purple_template text-2xl text-center font-semibold">Is It For You ?</h4>
+                            <button id="expand-btn" class="text-2xl font-semibold focus:outline-none transition-transform transform duration-300">+</button>
+                        </div>
+                        <div id="isit-foryou-info" class="hidden-info pt-5">
+                            <!-- Detailed information about the course -->
+                            <p>{{$course_content->is_it_for_you}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom: 22px;" >
-                    <div class="card border-secondary border-2 shadow focus-ring info-card" id="offering-universities">
-                        <div class="card-body">
-                            <h4 class="card-title" style="text-align: center;"><strong><span style="color: rgb(124, 118, 187);">Offering Universities</span></strong></h4>
-                            <div id="offering-universities-info" class="hidden-info">
-                                <!-- Detailed information about the course -->
-                                <ul>
-                                @foreach ($universities as $university)
+                {{-- OFFERING UNIVERSITIES --}}
+                <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="offering-universities">
+                    <div class="px-5 py-5">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-purple_template text-2xl text-center font-semibold">Offering Universities</h4>
+                            <button id="expand-btn" class="text-2xl font-semibold focus:outline-none transition-transform transform duration-300">+</button>
+                        </div>
+                        <div id="offering-universities-info" class="hidden-info pt-5">
+                            <!-- Detailed information about the course -->
+                            <ul class="list-disc list-inside">
+                            @foreach ($universities as $university)
                                 <li>{{$university->institution_name}}</li>
-                                @endforeach
-                                </ul>
-                            </div>
+                            @endforeach
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <style>
+        /* Initial state of the card */
+        .info-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
 
-<style>
-    /* Initial state of the card */
-    .info-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
+        /* Enlarged state of the card */
+        .info-card.enlarged {
+            transform: scale(1.05); /* Scale up the card */
+            z-index: 10; /* Ensure the card is above other elements */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for effect */
+            position: relative;
+            background-color: rgb(224 242 254);
+        }
 
-    /* Enlarged state of the card */
-    .info-card.enlarged {
-        transform: scale(1.05); /* Scale up the card */
-        z-index: 10; /* Ensure the card is above other elements */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for effect */
-        position: relative;
-    }
+        .hidden-info {
+            display: none;
+        }
 
-    .hidden-info {
-        display: none;
-    }
+        .visible-info {
+            display: block;
+        }
+    </style>
 
-    .visible-info {
-        display: block;
-    }
-</style>
-
-<script>
+    <script>
         // JavaScript to handle the card clicks
         document.addEventListener('DOMContentLoaded', (event) => {
             var cards = document.getElementsByClassName('info-card');
@@ -146,15 +132,16 @@
         function toggleCard(card) {
             var infoId = card.id + "-info";
             var info = document.getElementById(infoId);
+            const expandBtn = card.querySelector('#expand-btn');
 
             card.classList.toggle('enlarged');
             if (info) {
                 info.classList.toggle('visible-info');
                 info.classList.toggle('hidden-info');
+                expandBtn.textContent = info.classList.contains('visible-info') ? '-' : '+';
             }
         }
     </script>
-    @include('footer')
-    @include('script_js')
-</body>
-</html>
+
+
+</x-mainLayout>

@@ -11,14 +11,15 @@ class CourseOverviewController extends Controller
 {
     # Load course  overview page.
     public  function index(Request $request) {
+
+        // Check for ajax requests
         if ($request->ajax()){
             $course_name = $request->course_name;
             $course_fields = $request->course_fields;
-            # Do the data filtering  and sorting here.
+            // Do the data filtering  and sorting here.
             $query = CricosCourse::join('course_description', 'course_description.course_name', '=', 'cricos.course_name')
                 ->select('cricos.course_name', 'course_description.single_desc', 'cricos.category');
 
-            
             // If course fields are provided, apply additional filtering
             if (!empty($course_fields)) {
                 // Find for the fields
@@ -31,17 +32,20 @@ class CourseOverviewController extends Controller
                 $query->where('cricos.course_name', 'LIKE', '%' . $course_name . '%');
             }
 
+            // Get distinct value for courses
             $courses = $query->select('cricos.course_name','course_description.single_desc')
                 ->distinct('cricos.course_name')
                 ->get();
 
-            # check if the data is found or not
+            // Check if the data is found or not
             if ($courses->isEmpty()) {
                 return response()->json(['message' => 'No courses found, please note this is Text Sensitive', 'data' => [], 'status' => 'empty'], 200);
             }
             return response()->json(['data' => $courses, 'status' => 'found'], 200);
         
-        }else{
+        }
+        // The users come directly from the link
+        else{
             $courses = CourseDescription::select('course_name','single_desc')
                 ->get();
             
