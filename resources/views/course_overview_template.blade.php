@@ -11,7 +11,7 @@
                 <span>Quick Links:</span>
                 <ul class="list-disc list-inside">
                     <li>
-                        <a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities" class="hover:underline">University List</a>
+                        <a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities" class="hover:underline">Australia University List</a>
                     </li>
                     <li>
                         <a href="https://www.studyassist.gov.au/you-study/how-get-higher-education" class="hover:underline">How to get into higher education</a>
