@@ -23,7 +23,7 @@
                 <x-navbar-link href="{{ route('home') }}" :active="request()->routeIs('home')">Home</x-navbar-link>
                 <x-navbar-link href="{{ route('course-overview.index') }}" :active="request()->routeIs('course-overview.index')">Course Overview</x-navbar-link>
                 <x-navbar-link href="{{ route('global-trend.index') }}" :active="request()->routeIs('global-trend.index')">Global trends</x-navbar-link>
-                <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->routeIs('job-overview.index')">Career Choices</x-navbar-link>
+                {{-- <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->routeIs('job-overview.index')">Career Choices</x-navbar-link> --}}
                 <x-navbar-link href="{{ route('quick-questions') }}" :active="request()->routeIs('quick-questions')">Questions</x-navbar-link>
                 <x-navbar-link href="/soft-skill" :active="request()->is('/soft-skill')">Soft Skills</x-navbar-link>
             </ul>
