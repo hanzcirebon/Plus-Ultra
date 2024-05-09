@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'selector',
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./resources/**/*.vue",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
@@ -15,6 +17,9 @@ export default {
       },
       animation: {
         blink: 'blink 0.7s steps(2, start) infinite',
+      },
+      transitionProperty: {
+        'max-height': 'max-height'
       },
       colors: {
         'pink_template': 'rgb(255, 135, 176)',
