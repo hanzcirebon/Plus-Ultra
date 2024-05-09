@@ -37,56 +37,57 @@
                         <div class="text-md flex flex-col gap-1">
                             <span class="text-light_purple_template">Select all the fields that you want to include</span>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Information_Technology">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Information_Technology">
                                 <label class="ms-2 text-gray-900" for="formCheck-Information_Technology">Information Technology</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Data_Structures">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Data_Structures">
                                 <label class="ms-2 text-gray-900" for="formCheck-Data_Structures">Data Structures</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Decision_Support_Systems">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Decision_Support_Systems">
                                 <label class="ms-2 text-gray-900" for="formCheck-Decision_Support_Systems">Decision Support Systems</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Computer_Science">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Computer_Science">
                                 <label class="ms-2 text-gray-900" for="formCheck-Computer_Science">Computer Science</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Security_Science">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Security_Science">
                                 <label class="ms-2 text-gray-900" for="formCheck-Security_Science">Security Science</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Artificial_Intelligence">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Artificial_Intelligence">
                                 <label class="ms-2 text-gray-900" for="formCheck-Artificial_Intelligence">Artificial Intelligence</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Computer_Graphics">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Computer_Graphics">
                                 <label class="ms-2 text-gray-900" for="formCheck-Computer_Graphics">Computer Graphics</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Database_Management">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Database_Management">
                                 <label class="ms-2 text-gray-900" for="formCheck-Database_Management">Database Management</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Information_Systems">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Information_Systems">
                                 <label class="ms-2 text-gray-900" for="formCheck-Information_Systems">Information Systems</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Systems_Analysis_and_Design">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Systems_Analysis_and_Design">
                                 <label class="ms-2 text-gray-900" for="formCheck-Systems_Analysis_and_Design">Systems Analysis and Design</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Programming">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Programming">
                                 <label class="ms-2 text-gray-900" for="formCheck-Programming">Programming</label>
                             </div>
                             <div class="flex items-center gap-1">
-                                <input class="form-check-input w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Networks_and_Communications">
+                                <input class="form-check-course w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-Networks_and_Communications">
                                 <label class="ms-2 text-gray-900" for="formCheck-Networks_and_Communications">Networks and Communications</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                {{-- Accordion for STATE FILTER --}}
                 <h2 id="accordion-collapse-heading-2">
                     <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-2" aria-expanded="true" aria-controls="accordion-collapse-body-2">
                         <span class="text-purple_template pb-2 text-lg font-semibold">State Filters</span>
@@ -96,9 +97,34 @@
                     </button>
                 </h2>
                 <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
-                        <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                        <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
+                    <div class="p-5 border border-gray-200 border-b-0">
+                        <div class="text-md flex flex-col gap-1">
+                            <span class="text-light_purple_template">Select all the states you want to include</span>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-nsw">
+                                <label class="ms-2 text-gray-900" for="formCheck-nsw">New South Wales</label>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-vic">
+                                <label class="ms-2 text-gray-900" for="formCheck-vic">Victoria</label>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-vic">
+                                <label class="ms-2 text-gray-900" for="formCheck-qld">Queensland</label>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-vic">
+                                <label class="ms-2 text-gray-900" for="formCheck-wa">Western Australia</label>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-vic">
+                                <label class="ms-2 text-gray-900" for="formCheck-sa">South Australia</label>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <input class="form-check-state w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="checkbox" id="formCheck-vic">
+                                <label class="ms-2 text-gray-900" for="formCheck-tas">Tasmania</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -131,7 +157,7 @@
             // Function to perform AJAX search
             function performSearch() {
                 var courseName = $('#course-input').val(); // Get the search input value
-                var courseFields = $('.form-check-input:checked').map(function() {
+                var courseFields = $('.form-check-course:checked').map(function() {
                     return this.id.replace('formCheck-', ''); // Collecting selected checkbox values
                 }).get();
                 var dataContainer = $('#courses-container');
@@ -158,13 +184,11 @@
                         } else {
                             resultText.text(``);
                             $.each(data.data, function(index, course) {
-                                var courseHtml = `<a href="/course-overview/${course.course_name}" data-bss-hover-animate="pulse" class="card" style="margin-bottom: 15px; text-decoration: none;">
-                                                    <div class="card-header" style="background: rgba(255,255,255,0);border-style: none;">
-                                                        <h5 class="mb-0"><span style="color: rgb(255, 135, 176);">${course.course_name}</span></h5>
+                                var courseHtml =`<a href="/course-overview/${course.course_name}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
+                                                    <div class="pb-2">
+                                                        <span class="text-pink_template text-xl font-semibold">${course.course_name}</span>
                                                     </div>
-                                                    <div class="card-body">
-                                                        <p class="card-text">${course.single_desc}</p>
-                                                    </div>
+                                                    <p>${course.single_desc}</p>
                                                 </a>`;
                                 dataContainer.append(courseHtml);
                             });
@@ -182,7 +206,7 @@
             });
 
             // Optionally, bind the search function to change event of the checkboxes
-            $('.form-check-input').change(function() {
+            $('.form-check-course').change(function() {
                 performSearch();
             });
         });
