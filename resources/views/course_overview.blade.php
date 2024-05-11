@@ -257,6 +257,13 @@
             $('#search-course').click(function() {
                 performSearch();
             });
+            // Bind the search function to the Enter key in the course input field
+            $('#course-input').keypress(function(event) {
+                // Check if the Enter key is pressed
+                if (event.which === 13) {
+                    performSearch();
+                }
+            });
 
             // bind the search function to change in fields check box
             $('.form-check-course').change(function() {

@@ -6,7 +6,7 @@
                 <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="{{ route('course-overview.index') }}" style="color: rgb(124,118,187);">Course Overview</a></li>
                 <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="{{ route('global-trend.index') }}" style="color: rgb(124,118,187);">Global trends</a></li>
                 <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="{{ route('job-overview.index') }}" style="color: rgb(124,118,187);">Career Choices</a></li>
-                {{-- <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="{{ route('quick-questions') }}" style="color: rgb(124,118,187);">Questions</a></li> --}}
+                <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="{{ route('quick-questions') }}" style="color: rgb(124,118,187);">Questions</a></li>
                 <li class="nav-item"><a class="nav-link" data-bss-hover-animate="pulse" href="/soft-skill" style="color: rgb(124,118,187);">Soft Skills</a></li>
             </ul>
         </div>

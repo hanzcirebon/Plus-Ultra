@@ -21,9 +21,9 @@
         <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
             <ul class="font-medium flex max-lg:flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-5 rtl:space-x-reverse lg:mt-0">
                 <x-navbar-link href="{{ route('home') }}" :active="request()->routeIs('home')">Home</x-navbar-link>
-                <x-navbar-link href="{{ route('course-overview.index') }}" :active="request()->routeIs('course-overview.index')">Course Overview</x-navbar-link>
+                <x-navbar-link href="{{ route('course-overview.index') }}" :active="request()->Is('course-overview', 'course-overview/*')">Course Overview</x-navbar-link>
                 <x-navbar-link href="{{ route('global-trend.index') }}" :active="request()->routeIs('global-trend.index')">Global trends</x-navbar-link>
-                {{-- <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->routeIs('job-overview.index')">Career Choices</x-navbar-link> --}}
+                <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->Is('jobs-overview', 'jobs-overview/*')">Jobs Overview</x-navbar-link>
                 <x-navbar-link href="{{ route('quick-questions') }}" :active="request()->routeIs('quick-questions')">Questions</x-navbar-link>
                 <x-navbar-link href="/soft-skill" :active="request()->is('/soft-skill')">Soft Skills</x-navbar-link>
             </ul>
@@ -31,21 +31,20 @@
     </div>
 
     <script>
-    // Grab the burger button using its data attribute
-    const burgerButton = document.querySelector('[data-collapse-toggle="navbar-default"]');
+        // Grab the burger button using its data attribute
+        const burgerButton = document.querySelector('[data-collapse-toggle="navbar-default"]');
 
-    // Grab the menu div by its id
-    const navMenu = document.getElementById('navbar-default');
+        // Grab the menu div by its id
+        const navMenu = document.getElementById('navbar-default');
 
-    // Add an event listener to the burger button
-    burgerButton.addEventListener('click', function() {
-        // Toggle the 'hidden' class on the navMenu each time the button is clicked
-        navMenu.classList.toggle('hidden');
+        // Add an event listener to the burger button
+        burgerButton.addEventListener('click', function() {
+            // Toggle the 'hidden' class on the navMenu each time the button is clicked
+            navMenu.classList.toggle('hidden');
 
-        // Update aria-expanded attribute based on visibility for accessibility
-        const isExpanded = burgerButton.getAttribute('aria-expanded') === 'true';
-        burgerButton.setAttribute('aria-expanded', !isExpanded);
-    });
-</script>
-
+            // Update aria-expanded attribute based on visibility for accessibility
+            const isExpanded = burgerButton.getAttribute('aria-expanded') === 'true';
+            burgerButton.setAttribute('aria-expanded', !isExpanded);
+        });
+    </script>
 </nav>

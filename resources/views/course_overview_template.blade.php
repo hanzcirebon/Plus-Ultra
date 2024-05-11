@@ -11,14 +11,13 @@
                 <span>Quick Links:</span>
                 <ul class="list-disc list-inside">
                     <li>
-                        <a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities" class="hover:underline">Australia University List</a>
+                        <a href="https://www.studyaustralia.gov.au/en/plan-your-studies/list-of-australian-universities" class="hover:underline" target="_blank">Australia University List</a>
                     </li>
                     <li>
-                        <a href="https://www.studyassist.gov.au/you-study/how-get-higher-education" class="hover:underline">How to get into higher education</a>
+                        <a href="https://www.studyassist.gov.au/you-study/how-get-higher-education" class="hover:underline" target="_blank">How to get into higher education</a>
                     </li>
                 </ul>
             </div>
-            <!-- Card for Course Description -->
             <div class="flex flex-col gap-5">
                 {{-- COURSE DESCRIPTION --}}
                 <div class="border-2 w-[640px] hover:shadow-xl hover:shadow-sky-100 hover:bg-sky-50 info-card" id="course-description">
@@ -102,9 +101,9 @@
 
         /* Enlarged state of the card */
         .info-card.enlarged {
-            transform: scale(1.05); /* Scale up the card */
-            z-index: 10; /* Ensure the card is above other elements */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for effect */
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
             background-color: rgb(224 242 254);
         }
