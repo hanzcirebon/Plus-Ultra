@@ -57,7 +57,7 @@
             </h3>
             <div class="">
                 <div class="border-2 ml-24 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px] min-w-[700px] mb-10">
-                    <span class="font-bold">Discover how skills connect with each other</span> in this interactive hierarchy graph. Each node represents a skill, and lines show if those skills are needed together in job. Simply <span class="font-bold">hover over any skill</span> to see it and its related skills light up. This visual tool helps you understand which skills complement each other, guiding you to develop a well-rounded skill set for your IT career.
+                    <span class="font-bold">Discover how skills connect with each other</span> in this interactive hierarchy graph. Each node represents a skill, and lines show if those skills are needed together in job. Simply <span class="font-bold">hover over any skill to see it and its related skills light up</span>. This visual tool helps you understand which skills complement each other, guiding you to develop a well-rounded skill set for your IT career.
                 </div>
                 <div id="hie-graph">
                     <svg id="hie-graph-svg" class="self-center"></svg>

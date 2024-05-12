@@ -10,7 +10,7 @@
                 <p class="text-xl font-semibold text-gray-700">Your academic and career path should be clear and promising. Our platform guides learning paths for IT and digital creative fields to help you make informed choices.</p>
             </div>
             <div class="">
-                <img class="h-96" src="{{ asset('img/Body_new.jpeg') }}">
+                <img class="h-96" src="{{ asset('img/homepage.png') }}">
             </div>
         </div>
         <div class="max-w-full flex justify-center banner text-interact pb-5">
@@ -195,8 +195,8 @@
             {{-- CARDS --}}
             <div class="flex flex-row flex-wrap justify-center gap-10">
                 {{-- IT COURSES --}}
-                <a href="{{ route('course-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_1-Photoroom.png-Photoroom.png') }}" class="h-80 hover:rotate-6 transition duration-150">
+                <a href="{{ route('course-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                    <img src="{{ asset('img/it courses.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
                             IT Courses
@@ -207,8 +207,8 @@
                     </div>
                 </a>
                 {{-- GLOBAL TREND --}}
-                <a href="{{ route('global-trend.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_2-Photoroom.png-Photoroom.png') }}" class="h-80 hover:rotate-6 transition duration-150">
+                <a href="{{ route('global-trend.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                    <img src="{{ asset('img/Main_service_2-Photoroom.png-Photoroom.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
                             Global trends
@@ -219,8 +219,8 @@
                     </div>
                 </a>
                 {{-- CAREER CHOICES --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_3-removebg-preview.png') }}" class="h-80 hover:rotate-6 transition duration-150">
+                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                    <img src="{{ asset('img/Career.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
                             Career Choices
@@ -230,21 +230,9 @@
                         </p>
                     </div>
                 </a>
-                {{-- SHORT QUESTIONS --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_3-removebg-preview.png') }}" class="h-80 hover:rotate-6 transition duration-150">
-                    <div class="px-3 py-5">
-                        <h4 class="text-center text-2xl text-purple_template font-semibold">
-                            Short Questions
-                        </h4>
-                        <p class="text-lg">
-                            Take a short questions about yourself, and get a specializattion recommendation using our Recommendation Model.
-                        </p>
-                    </div>
-                </a>
                 {{-- SOFT SKILLS --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_3-removebg-preview.png') }}" class="h-80 hover:rotate-6 transition duration-150">
+                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                    <img src="{{ asset('img/asd.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
                             Soft Skills
@@ -255,17 +243,153 @@
                     </div>
                 </a>
                 {{-- SPECIALIZATION --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300">
-                    <img src="{{ asset('img/Main_service_3-removebg-preview.png') }}" class="h-80 hover:rotate-6 transition duration-150">
+                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                    <img src="{{ asset('img/asd.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
                             Specialization
                         </h4>
                         <p class="text-lg">
-                            See our recommendation for each specialization fields.
+                            See recommendation for our choosen specialization fields.
                         </p>
                     </div>
                 </a>
+            </div>
+        </div>
+
+        {{-- CONFUSED AND UNSURE --}}
+        <div class="relative flex justify-center pb-32">
+            <div class="absolute flex flex-col items-center justify-center gap-5">
+                <h1 class="text-purple_template text-4xl font-semibold">Still confused and unsure about your IT path?</h1>
+                <p class="text-lg">It only takes 3 minutes to "quickly find" what aspects of IT you are interested in and which IT careers are suitable for you</p>
+                <a href="{{ route('quick-questions') }}" class="focus:outline-none bg-light_purple_template hover:bg-purple_template focus:ring-4 focus:ring-purple-300 font-semibold rounded-3xl text-lg px-7 py-4">Take the test &rarr;</a>
+            </div>
+            <img src="{{ asset('img/quiz_home_image.JPG') }}" alt="Short Questions" class="h-5/6 w-5/6 object-contain">
+        </div>
+
+        {{-- FAQ --}}
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="max-w-screen-md w-full mb-32 border-4 rounded-xl border-black flex flex-col justify-center items-center p-10 gap-10 bg-gray-100">
+                <span class="text-4xl font-bold">FAQs</span>
+                <img src="{{ asset('img/FAQ.jpeg') }}" alt="FAQ" class="h-96 rounded-3xl hover:scale-110 transition-all duration-200">
+                <div id="accordion-color" class="w-[600px] min-w-md" data-accordion="collapse" data-active-classes="bg-gray-200" data-inactive-classes="">
+                    {{-- 1 --}}
+                    <h2 id="accordion-color-heading-1">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-1" aria-expanded="true" aria-controls="accordion-color-body-1">
+                            <span>How to choose the IT major that suits me ?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-1" class="hidden" aria-labelledby="accordion-color-heading-1">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>When choosing the IT major that's right for you, you can consider the following factors:</p>
+                            <ul class="list-disc list-inside">
+                                <li class="">Your Interests and Skills: You'll be more likely to succeed by choosing a major that matches your interests and skills.</li>
+                                <li>Career prospects: Understand the career prospects and job market demands of different majors, and choose areas with development potential.</li>
+                                <li>Course content: View the curriculum and teaching plans of different majors and choose courses related to your target career.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {{-- 2 --}}
+                    <h2 id="accordion-color-heading-2">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
+                            <span>How do I find the information I need ?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>You can easily find the information you need on the home page of our website. Or through the menu bar in the upper right corner of the website, we provide an intuitive menu where you can browse the content you are interested in by clicking on different tags. In addition, we also provide a search function in the detailed content section. You can enter keywords in the search bar to quickly find relevant information.</p>
+                        </div>
+                    </div>
+                    {{-- 3 --}}
+                    <h2 id="accordion-color-heading-3">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
+                            <span>Is the information on the website trustworthy ?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>Yes, all information on our website is rigorously screened and tested to ensure its accuracy and reliability. Our team is committed to providing high-quality, trustworthy information resources to help you better understand and learn IT knowledge.</p>
+                        </div>
+                    </div>
+                    {{-- 4 --}}
+                    <h2 id="accordion-color-heading-4">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-4" aria-expanded="false" aria-controls="accordion-color-body-4">
+                            <span>Do I need to pay for content on my website ?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-4" class="hidden" aria-labelledby="accordion-color-heading-4">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>No, our website is completely free. All content is free to browse and learn, and no login is required to use it. We are committed to providing free IT education resources and career planning guidance to Australian high school students to help them discover their interests and potential and prepare for future career development.</p>
+                        </div>
+                    </div>
+                    {{-- 5 --}}
+                    <h2 id="accordion-color-heading-5">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+                            <span>How to find hidden treasures of knowledge?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>Our website provides a large number of knowledge treasures. For example, take a quick test to find your learning path, and explore more:</p>
+                            <ul class="list-disc list-inside">
+                                <li>COURSE OVERVIEW: View courses in various fields to expand your horizons.</li>
+                                <li>GLOBAL TREND: Understand the latest IT technology developments and industry trends.</li>
+                                <li>Career CHOICES: Explore different IT career paths and industry directions.</li>
+                                <li>Short Questions: Take on a quick questions session and get a recommendation based on your interest from our Recommendation Model</li>
+                                <li>SOFT SKILLS: Improve important skills such as communication and teamwork.</li>
+                                <li>Specialization: </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {{-- 6 --}}
+                    <h2 id="accordion-color-heading-6">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-6" aria-expanded="false" aria-controls="accordion-color-body-6">
+                            <span>How to become a hero in the IT world?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-6" class="hidden" aria-labelledby="accordion-color-heading-6">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>Becoming a hero in IT is not far away, you need:</p>
+                            <ul class="list-disc list-inside">
+                                <li>Master skills: Master various IT skills like a hero and bravely face various challenges.</li>
+                                <li>Problem Solving: Like a hero, face problems bravely and solve them with wisdom and courage.</li>
+                                <li>Create value: Like a hero, create IT products and services that make the world a better place.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {{-- 7 --}}
+                    <h2 id="accordion-color-heading-7">
+                        <button type="button" class="flex items-center justify-between w-full p-5 font-bold text-xl rtl:text-right text-gray-600 border border-b-0 border-b-gray-200 gap-3" data-accordion-target="#accordion-color-body-7" aria-expanded="false" aria-controls="accordion-color-body-7">
+                            <span>How should I plan my IT career development?</span>
+                            <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                            </svg>
+                        </button>
+                    </h2>
+                    <div id="accordion-color-body-7" class="hidden" aria-labelledby="accordion-color-heading-7">
+                        <div class="p-5 border border-b-0 border-gray-200 bg-white">
+                            <p>To plan your IT career, you can take advantage of the various resources and tools available on our website. First, you can browse our course overview and global trends to learn about different IT disciplines and the latest industry dynamics. Secondly, you can learn about your interests and suitable career directions by taking the quick test we provide. Then, you can learn our soft skills modules to improve your soft skills capabilities. Finally, you can refer to our Career Selection Guide to explore various IT-related career paths and employment opportunities and develop a personal career development plan.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

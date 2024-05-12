@@ -1,15 +1,15 @@
-<nav class="mb-10">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{asset('img/Logo_new.jpeg')}}" class="h-32" alt="IT Explore Logo">
-            <div class="hidden lg:block ">
-                <span class="text-purple_template text-4xl font-bold">IT</span>
-                <span class="text-pink_template text-4xl text-bold font-bold">Explore</span>
+<nav>
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
+        <a href="/" class="flex items-center rtl:space-x-reverse">
+            <img src="{{asset('img/logo_new.png')}}" class="h-24" alt="IT Explore Logo">
+            <div class="hidden lg:block text-2xl">
+                <span class="text-purple_template font-bold">IT</span>
+                <span class="text-pink_template text-bold font-bold">Explore</span>
             </div>
         </a>
-        <a class="block lg:hidden max-xs:hidden">
-            <span class="text-purple_template text-4xl font-bold">IT</span>
-            <span class="text-pink_template text-4xl text-bold font-bold">Explore</span>
+        <a href="/" class="block lg:hidden max-xs:hidden text-2xl">
+            <span class="text-purple_template font-bold">IT</span>
+            <span class="text-pink_template text-bold font-bold">Explore</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
