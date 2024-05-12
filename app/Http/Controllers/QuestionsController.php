@@ -51,7 +51,7 @@ class QuestionsController extends Controller
         $skillsString = implode(',', $skills);
 
         // Call the API
-        $url = 'https://it-explore-39fbb6c0ac8f.herokuapp.com/it-explore-recommendation/lmao?user_skill_input=' . $skillsString;
+        $url = 'https://it-explore-recommendation-a8422580e083.herokuapp.com/it-explore-recommendation/lmao?user_skill_input=' . $skillsString;
         $response = Http::get($url);
 
         // Handle the API response
