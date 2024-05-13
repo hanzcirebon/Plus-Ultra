@@ -25,7 +25,7 @@
                 <x-navbar-link href="{{ route('global-trend.index') }}" :active="request()->routeIs('global-trend.index')">Global trends</x-navbar-link>
                 <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->Is('jobs-overview', 'jobs-overview/*')">Jobs Overview</x-navbar-link>
                 <x-navbar-link href="{{ route('quick-questions') }}" :active="request()->routeIs('quick-questions')">Questions</x-navbar-link>
-                <x-navbar-link href="/soft-skill" :active="request()->is('/soft-skill')">Soft Skills</x-navbar-link>
+                <x-navbar-link href="{{ route('soft-skill.index') }}" :active="request()->Is('soft-skill', 'soft-skill/*')">Soft Skills</x-navbar-link>
             </ul>
         </div>
     </div>

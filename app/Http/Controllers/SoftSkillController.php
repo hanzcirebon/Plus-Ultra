@@ -7,34 +7,22 @@ use Illuminate\Http\Request;
 class SoftSkillController extends Controller
 {
     public function index(){
-        return view('soft_skills/soft_skill_index');
+        return view('soft_skills_main');
     }
 
-    public function c(){
-        return view('soft_skills/soft_skill_comm');
+    public function communication(){
+        return view('soft_skills/communication');
     }
 
-    public function d(){
-        return view('soft_skills/soft_skill_download');
+    public function problem_solving(){
+        return view('soft_skills/problem_solving');
     }
 
-    public function mc(){
-        return view('soft_skills/soft_skill_menu_com');
+    public function teamwork(){
+        return view('soft_skills/teamwork');
     }
 
-    public function mp(){
-        return view('soft_skills/soft_skill_menu_problem_solving');
-    }
-
-    public function mt(){
-        return view('soft_skills/soft_skill_menu_tw');
-    }
-
-    public function p(){
-        return view('soft_skills/soft_skill_ps');
-    }
-
-    public function t(){
-        return view('soft_skills/soft_skill_tw');
+    public function skill_download(){
+        return view('soft_skills/skill_download');
     }
 }

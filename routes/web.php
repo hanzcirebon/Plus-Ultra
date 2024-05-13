@@ -16,35 +16,35 @@ use App\Http\Middleware\CheckRecommendationSession;
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::get('/login-auth', [LoginController::class, 'auth_login'])->name('login-auth');
 
-# Test
+// Test
 // Route::get('/test', function(){
 //     return view('test');
 // });
 
-# Add middleware to  protect the route from unauthenticated users.
+// Add middleware to  protect the route from unauthenticated users.
 Route::middleware(CheckGlobalPassword::class)->group(function(){
-    # Routing From/For Home Page
+    // Routing From/For Home Page
     Route::get('/', [HomepageController::class, 'index'])->name('home');
-    #Route::post('/course-search', [HomepageController::class, 'search_course'])->name('course-search-home');
+    //Route::post('/course-search', [HomepageController::class, 'search_course'])->name('course-search-home');
 
-    # Routing From/For Course Overview Page
+    // Routing From/For Course Overview Page
     Route::match(['get','post'], '/course-overview', [CourseOverviewController::class, 'index'])->name('course-overview.index');
     Route::get('/course-overview/{course_name}', [CourseOverviewController::class, 'LoadCourseDesc'])->name('courses-overview.detail');
-    #Route::post('/course-overview', [CourseOverviewController::class, ''])->name('course-search');
+    //Route::post('/course-overview', [CourseOverviewController::class, ''])->name('course-search');
 
-    # Routing From/For global trend page
+    // Routing From/For global trend page
     Route::get('global-trend', [GlobalTrendController::class, 'index'])->name('global-trend.index');
 
-    # Routing For Career choices Page
+    // Routing For Career choices Page
     Route::get('/career-choices', [CareerController::class, 'index'])->name('career-choices.index');
     Route::get('/career-choices/{category_name}', [CareerController::class, 'LoadCareerDetails'])->name('career-choices.details');
 
-    # Routing For Jobs Overview Page
+    // Routing For Jobs Overview Page
     Route::match(['get', 'post'], '/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');
     Route::get('/search-job', [JobController::class, 'search_job'])->name('search-jobs');
     Route::get('/jobs-overview/{job_title}', [JobController::class, 'LoadJobDetail'])->name('job-overview.details');
 
-    # Quick Questions
+    // Quick Questions
     Route::get('/questions', [QuestionsController::class, 'index'])->name('quick-questions');
     Route::post('/submit-answer', [QuestionsController::class, 'predict'])->name('predict');
     Route::middleware(CheckRecommendationSession::class)->group(function(){
@@ -52,13 +52,12 @@ Route::middleware(CheckGlobalPassword::class)->group(function(){
         //Route::get('/questions/unlock-your-future')->name('unlock-future');
     });
 
-    # Soft skills
-    Route::get('/soft-skill', [SoftSkillController::class,'index']);
-    Route::get('/soft-skill/mts', [SoftSkillController::class,'mt']);
-    Route::get('/soft-skill/mts/index', [SoftSkillController::class,'t']);
-    Route::get('/soft-skill/mcs', [SoftSkillController::class,'mc']);
-    Route::get('/soft-skill/mcs/index', [SoftSkillController::class,'c']);
-    Route::get('/soft-skill/mpss', [SoftSkillController::class,'mp']);
-    Route::get('/soft-skill/mpss/index', [SoftSkillController::class,'p']);
-    Route::get('/soft-skill/download', [SoftSkillController::class,'d']);
+    // Soft skills
+    Route::get('/soft-skill', [SoftSkillController::class,'index'])->name('soft-skill.index');
+    Route::get('/soft-skill/communication', [SoftSkillController::class,'communication'])->name('soft-skill.communication');
+    Route::get('/soft-skill/problem-solving', [SoftSkillController::class,'problem_solving'])->name('soft-skill.problem_solving');
+    Route::get('/soft-skill/teamwork', [SoftSkillController::class,'teamwork'])->name('soft-skill.teamwork');
+    Route::get('/soft-skill/download', [SoftSkillController::class,'skill_download'])->name('soft-skill.download');
+
+    // Specialization
 });
