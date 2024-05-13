@@ -33,7 +33,7 @@
     <script>
         const questions = [
             {
-                "questions": "Which activity do you enjoy the most?",
+                "question": "Which activity do you enjoy the most?",
                 "options": ["Solving puzzles and brain teasers", "Playing video games", "Exploring new software or apps", "Reading paper/journal/blog"],
                 "related": ["algorithms,critical thinking", "team player", "research", "research"]
             },
