@@ -8,6 +8,7 @@ use App\Http\Controllers\GlobalTrendController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\QuestionsController;
 use App\Http\Controllers\SoftSkillController;
+use App\Http\Controllers\SpecializationController;
 
 use App\Http\Middleware\CheckGlobalPassword;
 use App\Http\Middleware\CheckRecommendationSession;
@@ -60,4 +61,6 @@ Route::middleware(CheckGlobalPassword::class)->group(function(){
     Route::get('/soft-skill/download', [SoftSkillController::class,'skill_download'])->name('soft-skill.download');
 
     // Specialization
+    Route::get('/specialization', [SpecializationController::class,'index'])->name('specialization.index');
+    Route::get('/specialization/{specialization_field}', [SpecializationController::class,'show_roadmap'])->name('specialization.content');
 });
