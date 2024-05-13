@@ -26,7 +26,8 @@ Route::get('/login-auth', [LoginController::class, 'auth_login'])->name('login-a
 Route::middleware(CheckGlobalPassword::class)->group(function(){
     // Routing From/For Home Page
     Route::get('/', [HomepageController::class, 'index'])->name('home');
-    //Route::post('/course-search', [HomepageController::class, 'search_course'])->name('course-search-home');
+    Route::post('/course-search', [HomepageController::class, 'search_course'])->name('course-search-home');
+    Route::get('/course-overview-field/{selected_field}', [HomepageController::class,'course_overview_field'])->name('course-interest');
 
     // Routing From/For Course Overview Page
     Route::match(['get','post'], '/course-overview', [CourseOverviewController::class, 'index'])->name('course-overview.index');
@@ -35,10 +36,6 @@ Route::middleware(CheckGlobalPassword::class)->group(function(){
 
     // Routing From/For global trend page
     Route::get('global-trend', [GlobalTrendController::class, 'index'])->name('global-trend.index');
-
-    // Routing For Career choices Page
-    Route::get('/career-choices', [CareerController::class, 'index'])->name('career-choices.index');
-    Route::get('/career-choices/{category_name}', [CareerController::class, 'LoadCareerDetails'])->name('career-choices.details');
 
     // Routing For Jobs Overview Page
     Route::match(['get', 'post'], '/jobs-overview', [JobController::class, 'index'])->name('job-overview.index');

@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <div class="max-w-full flex justify-center gap-10 py-6 pb-32">
+    <div class="max-w-full flex flex-wrap justify-center gap-10 py-6 pb-32">
         {{-- FILTER BOX --}}
         <div class="px-2 py-5 min-w-xs max-w-xs w-full">
             <div id="accordion-collapse" data-accordion="collapse" class="">

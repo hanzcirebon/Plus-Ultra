@@ -6,8 +6,8 @@
                 <img class="h-96" src="{{ asset('img/Slider_2.webp') }}">
             </div>
         </div>
-        <div class="flex justify-evenly">
-            <div class="text-gray-700">
+        <div class="flex justify-evenly flex-wrap">
+            <div class="text-gray-700 pb-10">
                 <span>Quick Links:</span>
                 <ul class="list-disc list-inside">
                     <li>

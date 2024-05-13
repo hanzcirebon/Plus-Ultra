@@ -7,7 +7,7 @@
             <h3 class="text-2xl font-semibold text-center text-purple_template" id="job_role">
                 Discover Top <span class="text-pink_template">IT Careers</span>
             </h3>
-            <div class="flex flex-row justify-center gap-10">
+            <div class="flex flex-wrap justify-center gap-10">
                 <p class="self-center border-2 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px]">
                     showcasing the <span class="font-bold">top 10 IT job roles on LinkedIn</span>. Each bar represents a different job, ranked by the number of current postings. Simply <span class="font-bold">hover over a bar </span>to see the job title and exact number of openings. Curious about the skills needed for these roles? <span class="font-bold">Click on any bar</span>, and a word cloud will appear <a href="#wordcloud-title" class="font-semibold underline">below</a>, highlighting the key skills mentioned in job listings for that role. Explore the chart to uncover which skills can help boost your career in technology.
                 </p>
@@ -19,9 +19,9 @@
             <h3 id="wordcloud-title" class="text-2xl font-semibold text-center text-purple_template">
                 <span class="text-pink_template">In-Demand Skills</span> Insights with Word Cloud
             </h3>
-            <div class="flex flex-row justify-center gap-10">
+            <div class="flex flex-wrap justify-center gap-10">
                 <div class="wordcloud-container">
-                    <div id="wordcloud" class="wordcloud text-center d-flex flex-column justify-content-center align-items-center p-4">
+                    <div id="wordcloud" class="wordcloud text-center p-4">
                         <h4 class="pb-20">Click any Bar on <a href="#job_role" class="underline font-semibold">Job Barchart</a></h4>
                     </div>
                 </div>

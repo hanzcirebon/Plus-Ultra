@@ -18,7 +18,7 @@
             </svg>
         </button>
 
-        <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
+        <div class="hidden w-full lg:block lg:w-auto pr-5" id="navbar-default">
             <ul class="font-medium flex max-lg:flex-col p-4 lg:p-0 mt-4 lg:flex-row lg:space-x-5 rtl:space-x-reverse lg:mt-0">
                 <x-navbar-link href="{{ route('home') }}" :active="request()->routeIs('home')">Home</x-navbar-link>
                 <x-navbar-link href="{{ route('course-overview.index') }}" :active="request()->Is('course-overview', 'course-overview/*')">Course Overview</x-navbar-link>
