@@ -232,7 +232,7 @@
                     </div>
                 </a>
                 {{-- SOFT SKILLS --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                <a href="{{ route('soft-skill.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
                     <img src="{{ asset('img/soft-skill-card.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
@@ -244,7 +244,7 @@
                     </div>
                 </a>
                 {{-- SPECIALIZATION --}}
-                <a href="{{ route('job-overview.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
+                <a href="{{ route('specialization.index') }}" class="bg-sky-100 drop-shadow-lg max-w-96 rounded-xl hover:scale-110 transition duration-200 focus:bg-sky-300 flex flex-col">
                     <img src="{{ asset('img/specializaation-card.png') }}" class="h-80 hover:rotate-6 transition duration-150 p-5">
                     <div class="px-3 py-5">
                         <h4 class="text-center text-2xl text-purple_template font-semibold">
@@ -353,7 +353,7 @@
                                 <li>Career CHOICES: Explore different IT career paths and industry directions.</li>
                                 <li>Short Questions: Take on a quick questions session and get a recommendation based on your interest from our Recommendation Model</li>
                                 <li>SOFT SKILLS: Improve important skills such as communication and teamwork.</li>
-                                <li>Specialization: </li>
+                                <li>Specialization: Become specialize in our chosen fields.</li>
                             </ul>
                         </div>
                     </div>

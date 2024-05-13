@@ -38,20 +38,16 @@ class QuestionsController extends Controller
         // Handle the API response
         if ($response->successful()) {
             $apiResponse = $response->json();
-            // $job_title = $apiResponse[0]['job_title'];
+            $job_title = $apiResponse[0]['job_title'];
+            $percentage = $apiResponse[0]['similarity'];
 
-            // // Call the database with the matching job title
-            // $matchingJobs = JobPredContent::where('job', 'LIKE', '%' . $job_title . '%')
-            //                     ->select('job_description', 'required_skills')
-            //                     ->first();
+            $dataToStore = [
+                'job_title' => $job_title,
+                'similarity' => $percentage,
+                'others' => $apiResponse
+            ];
+            Session::put('recommendation_result', $dataToStore);
 
-            // // dd($matchingJobs['required_skills']);
-            // $dataToStore = [
-            //     'job_title' => $job_title,
-            //     'job_description' => $matchingJobs['job_description'],
-            //     'required_skills' => $matchingJobs['required_skills']
-            // ];
-            // Session::put('recommendation_result', $dataToStore);
             $message = 'success';
             $status = 200;
         }else{
@@ -59,7 +55,7 @@ class QuestionsController extends Controller
             $status = 500;
         }
         //dd($dataToStore['job_title']);
-        return response()->json(['message'=> $apiResponse],$status);
+        return response()->json(['message'=> $message],$status);
     }
 
     /**

@@ -33,50 +33,55 @@
     <script>
         const questions = [
             {
-                question: "Which activity do you enjoy the most?",
-                options: ["Solving puzzles and brain teasers", "Playing video games", "Exploring new software or apps", "Analyzing data or graphs"],
-                related: ["problem solving", "game development", "software developer", "analysis"]
+                "questions": "Which activity do you enjoy the most?",
+                "options": ["Solving puzzles and brain teasers", "Playing video games", "Exploring new software or apps", "Reading paper/journal/blog"],
+                "related": ["algorithms,critical thinking", "team player", "research", "research"]
             },
-            { 
-                question: "Which subject are you most comfortable with?", 
-                options: ["Mathematics", "Computer Subject", "Art or design", "Economics or business","Science (physic, biology, chemistry)"],
-                related: ["mathematics,statistics", "computer science", "ui design", "business", "science"]
+            {
+                "question": "Which subject are you most comfortable with?",
+                "options": ["Mathematics", "Art or design", "Computer Science", "Economics or Business", "Science (Physics, Biology, Chemistry)"],
+                "related": ["mathematics,analytical skills", "written communication,creative direction","computer science,programming,problem solving","business,communication,analytical skills","data science,critical thinking"]
+            },
+            {
+                "question": "How do you prefer to approach complex projects?",
+                "options": ["Breaking them down into smaller tasks", "Collaborating with a team", "Following established methodologies", "Experimenting with different approaches"],
+                "related": ["problem solving,analytical skills", "teamwork,communication", "project management,methodologies", "creativity,innovation"]
+            },
+            {
+                "question": "What aspect of technology interests you the most?",
+                "options": ["Developing software applications", "Analyzing and interpreting data", "Creating immersive gaming experiences", "Securing digital systems and networks"],
+                "related": ["software development", "data analysis", "game development", "cybersecurity"]
+            },
+            {
+                "question": "When faced with a problem, how do you prefer to approach it?",
+                "options": ["Break it down into smaller parts and analyze each part", "Experiment with different solutions until one works", "Plan and organize a structured solution", "Follow a set of rules or guidelines to solve it"],
+                "related": ["leadership,design patterns", "written communication,reporting", "teamwork,communication", "algorithms,coding standards"]
+            },
+            {
+                "question": "Which area of technology do you see yourself making an impact in?",
+                "options": ["Artificial Intelligence and Machine Learning", "Information Systems and Data Analysis", "Game Development and Virtual Reality", "Cybersecurity and Network Defense"],
+                "related": ["ai,machine learning", "information technology", "game development", "networking"]
+            },
+            {
+                "question": "What type of problem-solving challenges excite you the most?",
+                "options": ["Analyzing and interpreting data to uncover insights", "Creating innovative solutions to complex problems", "Designing and developing software applications", "Protecting digital assets from cyber threats"],
+                "related": ["problem solving,analytical skills", "innovation", "software development", "risk assessment"]
+            },
+            {
+                "question": "How do you prefer to work in a team setting?",
+                "options": ["Taking a leadership role and delegating tasks", "Contributing ideas and collaborating with others", "Providing technical expertise and support", "Ensuring effective communication and coordination"],
+                "related": ["leadership", "collaboration,communication", "technical support", "communication"]
+            },
+            {
+                "question": "What kind of tasks do you good at?",
+                "options": ["Analyzing data and finding patterns", "Generating new ideas or concepts", "Writing code or programming", "Designing user interfaces or experiences"],
+                "related": ["critical thinking,design patterns", "board analysis", "code reviews", "game design,graphic design"]
+            },
+            {
+                "question": "What motivates you to pursue a career in technology?",
+                "options": ["Solving real-world problems using innovative solutions", "Exploring cutting-edge advancements in the field", "Making a positive impact on society through technology", "Building a successful and rewarding career in IT"],
+                "related": ["innovation,build processes", "exploration", "impact", "career development"]
             }
-            // { 
-            //     question: "What do you find most intriguing?", 
-            //     options: ["Understanding complex systems", "Creatively expressing ideas", "Designing and building projects", "Working with numbers and patterns"],
-            //     related: []
-            // },
-            // {
-            //     question: "When faced with a problem, how do you prefer to approach it?", 
-            //     options: ["Break it down into smaller parts and analyze each part", "Experiment with different solutions until one works", "Plan and organize a structured solution", "Follow a set of rules or guidelines to solve it"],
-            //     related: []
-            // },
-            // { 
-            //     question: "What kind of tasks do you good at?", 
-            //     options: ["Analyzing data and finding patterns", "Generating new ideas or concepts", "Writing code or programming", "Designing user interfaces or experiences"],
-            //     related: []
-            // },
-            // { 
-            //     question: "Which skill do you think is most important for success in the modern world?", 
-            //     options: ["Critical thinking and problem-solving", "Creativity and innovation", "Technical skills like coding or software development", "Communication and collaboration"],
-            //     related: []
-            // },
-            // { 
-            //     question: "What interests you the most about technology?", 
-            //     options: ["Building and programming machines", "Creating visually appealing content", "Analyzing data to uncover insights", "Exploring new ways to connect people"],
-            //     related: []
-            // },
-            // { 
-            //     question: "Which project would you be most excited to work on?", 
-            //     options: ["Developing a new mobile app", "Designing a virtual reality game", "Analyzing real-world datasets to solve a problem", "Building a scalable cloud infrastructure"],
-            //     related: []
-            // },
-            // { 
-            //     question: "How do you prefer to learn new things?", 
-            //     options: ["Through hands-on experimentation and trial-and-error", "By studying theories and concepts", "Through interactive tutorials or online courses", "By collaborating with others and sharing ideas"],
-            //     related: []
-            // }
         ];
         let currentQuestion = 0;
 
@@ -124,7 +129,6 @@
             const relatedData = questions[currentQuestion].related[selectedOptionIndex];
 
             localStorage.setItem('question_' + currentQuestion, relatedData);
-            console.log(localStorage.getItem('question_0'));
         }
 
         function nextQuestion() {
@@ -143,7 +147,9 @@
 
         function submitQuiz() {
             // disable the submit button
-            document.getElementById('submit-btn').classList.add('cursor-not-allowed');
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.classList.add('cursor-not-allowed', 'opacity-50'); 
 
             let answers = [];
             for (let i = 0; i < questions.length; i++) {
@@ -166,15 +172,15 @@
             .then(data => {
                 console.log('Success:', data);
                 alert('Congratulations! You have submitted the quiz.');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('cursor-not-allowed', 'opacity-50');
             })
             .catch((error) => {
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('cursor-not-allowed', 'opacity-50');
             });
-            //
-
-            // enable submit button
-            document.getElementById('submit-btn').classList.remove('cursor-not-allowed');
         }
 
 
@@ -183,7 +189,13 @@
         }
 
         function viewRecommendations() {
-            alert('This feature is coming soon!');
+            @if(Session::has('recommendation_result'))
+                // If the session exists, redirect to another page
+                window.location.href = "{{ route('specialization.index') }}"; 
+            @else
+                // If the session does not exist, show an alert
+                alert('Please do the questions first!');
+            @endif
         }
 
         window.onload = () => displayQuestion();
