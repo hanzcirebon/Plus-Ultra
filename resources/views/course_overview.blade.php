@@ -95,7 +95,7 @@
                 </h2>
                 {{-- Accordion for STATE FILTER CONTENT --}}
                 <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-                    <div class="p-5 border border-gray-200 border-b-0">
+                    <div class="p-5 border border-gray-200">
                         <div class="text-md flex flex-col gap-1">
                             <span class="text-light_purple_template">Select all the states you want to include</span>
                             <div class="flex items-center gap-1">
@@ -135,16 +135,16 @@
                 </div>
 
                 {{-- Accordion for SPECIALIZATION HEADER --}}
-                <h2 id=" accordion-collapse-heading-3">
+                {{-- <h2 id=" accordion-collapse-heading-3">
                     <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-3" aria-expanded="true" aria-controls="accordion-collapse-body-3">
                         <span class="text-purple_template pb-2 text-lg font-semibold">Specialization Filters</span>
                         <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
                         </svg>
                     </button>
-                </h2>
+                </h2> --}}
                 {{-- Accordion for SPECIALIZATION CONTENT --}}
-                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby=" accordion-collapse-heading-3">
+                {{-- <div id="accordion-collapse-body-3" class="hidden" aria-labelledby=" accordion-collapse-heading-3">
                     <div class="p-5 border border-gray-200">
                         <div class="text-md flex flex-col gap-1">
                             <span class="text-light_purple_template">Select the specialization that you want to include</span>
@@ -166,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
