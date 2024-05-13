@@ -26,29 +26,10 @@ class QuestionsController extends Controller
      * @return view
      */
     public function predict(Request $request){
-        // the pre-defined skills
-        $pre_skills = [];
-        // Retrieve each skill from the form input and add it to the array
-        for ($i = 1; $i <= 9; $i++) {
-            $skillInput = $request->input('question' . $i);
-            if (!empty($skillInput)) { // Check if the input is not empty
-                $pre_skills[] = $skillInput; // Add the skill to the array
-            }
-        }
-        
-        // Handling inputs from question 10 and 11
-        $question10Input = $request->input('question10');
-        $question11Input = $request->input('question11');
-
-        // Convert each comma-separated string into an array, clean it, and add to skills array
-        $additionalSkills10 = array_map([$this, 'cleanText'], explode(',', $question10Input));
-        $additionalSkills11 = array_map([$this, 'cleanText'], explode(',', $question11Input));  
-
-        // Merge additional skills into the main skills array
-        $skills = array_merge($pre_skills, $additionalSkills10, $additionalSkills11);
+        $pre_skills = $request->answers;
 
         // Combine all skills into a single string separated by commas
-        $skillsString = implode(',', $skills);
+        $skillsString = implode(',', $pre_skills);
 
         // Call the API
         $url = 'https://it-explore-recommendation-a8422580e083.herokuapp.com/it-explore-recommendation/lmao?user_skill_input=' . $skillsString;
@@ -57,26 +38,28 @@ class QuestionsController extends Controller
         // Handle the API response
         if ($response->successful()) {
             $apiResponse = $response->json();
-            $job_title = $apiResponse[0]['job_title'];
+            // $job_title = $apiResponse[0]['job_title'];
 
-            // Call the database with the matching job title
-            $matchingJobs = JobPredContent::where('job', 'LIKE', '%' . $job_title . '%')
-                                ->select('job_description', 'required_skills')
-                                ->first();
+            // // Call the database with the matching job title
+            // $matchingJobs = JobPredContent::where('job', 'LIKE', '%' . $job_title . '%')
+            //                     ->select('job_description', 'required_skills')
+            //                     ->first();
 
-            // dd($matchingJobs['required_skills']);
-            $dataToStore = [
-                'job_title' => $job_title,
-                'job_description' => $matchingJobs['job_description'],
-                'required_skills' => $matchingJobs['required_skills']
-            ];
-            Session::put('recommendation_result', $dataToStore);
+            // // dd($matchingJobs['required_skills']);
+            // $dataToStore = [
+            //     'job_title' => $job_title,
+            //     'job_description' => $matchingJobs['job_description'],
+            //     'required_skills' => $matchingJobs['required_skills']
+            // ];
+            // Session::put('recommendation_result', $dataToStore);
             $message = 'success';
+            $status = 200;
         }else{
             $message = 'failed';
+            $status = 500;
         }
         //dd($dataToStore['job_title']);
-        return redirect(route('quick-questions'))->with('message', $message);
+        return response()->json(['message'=> $apiResponse],$status);
     }
 
     /**
