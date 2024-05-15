@@ -9,7 +9,7 @@
             </h3>
             <div class="flex flex-wrap justify-center gap-10">
                 <p class="self-center border-2 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px]">
-                    showcasing the <span class="font-bold">top 10 IT job roles on LinkedIn</span>. Each bar represents a different job, ranked by the number of current postings. Simply <span class="font-bold">hover over a bar </span>to see the job title and exact number of openings. Curious about the skills needed for these roles? <span class="font-bold">Click on any bar</span>, and a word cloud will appear <a href="#wordcloud-title" class="font-semibold underline">below</a>, highlighting the key skills mentioned in job listings for that role. Explore the chart to uncover which skills can help boost your career in technology.
+                    Check out the <span class="font-bold">top 10 IT job</span> roles on LinkedIn! <span class="font-bold">Hover over a bar</span> to see the job title and number of openings. <span class="font-bold">Click on any bar</span> to see the key skills for that role. Explore the chart to boost your career in technology!
                 </p>
                 <div id="job_barchart" class="items-center p-5"></div>
             </div>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <p id="details_word" class="hidden self-center border-2 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px] min-w-[700px]">
-                    Here, you'll find a word cloud that appears when you click on a job title's bar. This visual feature displays the <span class="font-bold">most commonly mentioned skills required for the selected IT role</span>. Larger words represent skills that are more frequently cited in job postings, helping you quickly identify the key qualifications and technologies relevant to each position. Use this word cloud to gauge which skills are most valuable for advancing in your chosen IT career.
+                    This wordcloud showing the most <span class="font-bold">commonly mentioned skills for the selected IT role</span>. The bigger the word, the more often it's mentioned in job postings, making it easy to spot the key qualifications and technologies for each position. Use the word cloud to see which skills are most valuable for advancing in your chosen IT career.
                 </p>
             </div>
         </div>
@@ -39,14 +39,13 @@
             <div id="network-graph" class="flex justify-center items-center relative">
                 <svg id="network-graph-svg" class="border-2"></svg>
                 <div class="absolute top-0 left-0 border-2 ml-24 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px] min-w-[700px]">
-                    <span class="font-semibold">Explore the connections between IT jobs and their required skills</span> with our interactive graph. <span class="font-semibold">Each node represents a job or a skill</span>, with lines showing their links. How to Use:
+                    <span class="font-semibold">Discover how IT jobs and skills connect</span> with our dynamic graph. <span class="font-semibold">Each node represents a job or skill</span>, linked by their relationships. Here's how to navigate:
                     <ul class="list-inside list-disc">
-                        <li><span class="font-bold">Zoom</span>: Use your mouse wheel to zoom in for details or zoom out to see more.</li>
-                        <li><span class="font-bold">Drag</span>: Click and drag to move around the graph or reposition nodes.</li>
-                        <li><span class="font-bold">Hover</span>: Place your cursor over a job node or over a skill node to see its frequency.</li>
-                        <li><span class="font-bold">Click</span>: Highlight any node by clicking on it to focus on its connections.</li>
+                        <li><span class="font-bold">Zoom</span>: Scroll to zoom in for details or out to view the full picture.</li>
+                        <li><span class="font-bold">Drag</span>: Click and drag to explore different parts of the graph.</li>
+                        <li><span class="font-bold">Hover</span>: Mouse over nodes to see details like frequency and connections.</li>
+                        <li><span class="font-bold">Click</span>: Select any node to focus on its specific connections.</li>
                     </ul>
-                    This tool helps you easily see which skills apply to multiple IT roles and plan your career path efficiently.
                 </div>
             </div>
         </div>
@@ -57,7 +56,7 @@
             </h3>
             <div class="">
                 <div class="border-2 ml-24 rounded-xl p-5 bg-sky-50 hover:bg-sky-200 transition-all duration-100 max-w-[700px] min-w-[700px] mb-10">
-                    <span class="font-bold">Discover how skills connect with each other</span> in this interactive hierarchy graph. Each node represents a skill, and lines show if those skills are needed together in job. Simply <span class="font-bold">hover over any skill to see it and its related skills light up</span>. This visual tool helps you understand which skills complement each other, guiding you to develop a well-rounded skill set for your IT career.
+                    Explore an interactive graph to see how skills connect in various IT roles. <span class="font-bold">Hover over a skill</span> to see its related skills light up, helping you build a well-rounded skill set.
                 </div>
                 <div id="hie-graph">
                     <svg id="hie-graph-svg" class="self-center"></svg>
