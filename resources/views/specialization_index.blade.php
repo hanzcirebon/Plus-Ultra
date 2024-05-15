@@ -13,7 +13,7 @@
         </div>
         @if (Session::has('recommendation_result'))
         <div class="flex flex-wrap justify-center gap-10">
-            <p class="max-w-52 align-middle text-lg font-medium">Based on your recommendation results, you are {{ Session::get('recommendation_result')['similarity'] }} fit to be specialize in :</p>
+            <p class="max-w-52 align-middle text-lg font-medium">Based on your answers on Short Questions, you are {{ Session::get('recommendation_result')['similarity'] }} fit to be specialized in :</p>
             <a href="{{route('specialization.content', Session::get('recommendation_result')['job_title'] )}}" class="inline-block rounded-2xl bg-gradient-to-r from-yellow-300 via-red-400 to-fuchsia-700 p-5 min-w-[24rem] hover:scale-105 hover:shadow-lg transition-transform duration-300">
                 <img src="{{asset('img/specialization/'.Session::get('recommendation_result')['job_title'].'.png')}}" alt="{{Session::get('recommendation_result')['job_title']}}" class="h-40 w-full object-cover">
                 <p class="text-base">Roadmap</p>

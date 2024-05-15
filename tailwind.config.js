@@ -14,9 +14,14 @@ export default {
           '0%, 100%': { borderColor: '#00ffae' },
           '50%': { borderColor: 'transparent' }
         },
+        flip: {
+          from: { transform: 'rotateY(0deg)' },
+          to: { transform: 'rotateY(180deg)' }
+        },
       },
       animation: {
         blink: 'blink 0.7s steps(2, start) infinite',
+        flip: 'flip 0.8s ease-in-out',
       },
       transitionProperty: {
         'max-height': 'max-height'
@@ -32,6 +37,12 @@ export default {
       blur: {
         'xs': '2px',
       }
+    },
+  },
+  variants: {
+    extend: {
+      transformStyle: ['hover', 'focus'],
+      backfaceVisibility: ['hover', 'focus'],
     },
   },
   plugins: [],
