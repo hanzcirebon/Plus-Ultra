@@ -7,10 +7,12 @@
                 <span class="text-pink_template text-bold font-bold">Explore</span>
             </div>
         </a>
+        
         <a href="/" class="block lg:hidden max-xs:hidden text-2xl">
             <span class="text-purple_template font-bold">IT</span>
             <span class="text-pink_template text-bold font-bold">Explore</span>
         </a>
+
         <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -24,8 +26,8 @@
                 <x-navbar-link href="{{ route('course-overview.index') }}" :active="request()->Is('course-overview', 'course-overview/*')">Course Overview</x-navbar-link>
                 <x-navbar-link href="{{ route('global-trend.index') }}" :active="request()->routeIs('global-trend.index')">Global trends</x-navbar-link>
                 <x-navbar-link href="{{ route('job-overview.index') }}" :active="request()->Is('jobs-overview', 'jobs-overview/*')">Jobs Overview</x-navbar-link>
-                <x-navbar-link href="{{ route('quick-questions') }}" :active="request()->routeIs('quick-questions')">Questions</x-navbar-link>
                 <x-navbar-link href="{{ route('soft-skill.index') }}" :active="request()->Is('soft-skill', 'soft-skill/*')">Soft Skills</x-navbar-link>
+                <x-navbar-link href="{{ route('quick-questions') }}" :active="request()->routeIs('quick-questions')">Questions</x-navbar-link>
                 <x-navbar-link href="{{ route('specialization.index') }}" :active="request()->Is('specialization', 'specialization/*')">Specialization</x-navbar-link>
             </ul>
         </div>
