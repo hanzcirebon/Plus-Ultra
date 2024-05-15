@@ -37,6 +37,13 @@ class QuestionsController extends Controller
 
         // Handle the API response
         if ($response->successful()) {
+
+            // If the seesion is alreaady created it will remove the session
+            if (Session::has('recommendation_result')){
+                // Remove the session variable
+                Session::forget('recommendation_result');
+            }
+
             $apiResponse = $response->json();
             $job_title = $apiResponse[0]['job_title'];
             $percentage = $apiResponse[0]['similarity'];
@@ -56,23 +63,6 @@ class QuestionsController extends Controller
         }
         //dd($dataToStore['job_title']);
         return response()->json(['message'=> $message],$status);
-    }
-
-    /**
-     * Clean the input text by trimming and removing extra internal spaces.
-     *
-     * @param string $text
-     * @return string
-     */
-    private function cleanText($text)
-    {
-        // Trim whitespace at the start and end of the text
-        $text = trim($text);
-
-        // Replace multiple spaces with a single space
-        $text = preg_replace('/\s+/', ' ', $text);
-
-        return $text;
     }
 
     /**
