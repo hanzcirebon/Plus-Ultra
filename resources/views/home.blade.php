@@ -395,7 +395,7 @@
         </div>
 
         {{-- ABOUT US --}}
-        <div class="max-w-full flex flex-col justify-center items-center">
+        <div class="max-w-full flex flex-col justify-center items-center mb-32">
             <div class="max-w-4xl text-center">
                 <h1 class="text-4xl font-bold pb-5">
                     <span class="text-purple_template">About </span><span class="text-pink_template"> Us</span>

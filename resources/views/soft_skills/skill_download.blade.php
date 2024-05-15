@@ -1,7 +1,7 @@
 <x-mainLayout>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <div class="bg-gray-100">
+    <div class="bg-gray-100 pb-32">
         <div class="wave">
             <h1 class="text-3xl font-bold text-white mb-2 text-center">SKILL UP ZONE</h1>
         </div>
@@ -9,7 +9,7 @@
             <div class="text-center">
                 <h2 class="text-xl font-bold text-gray-800 mb-4">Soft Skills Revealed: The Secret to Becoming a Top Talent
                 </h2>
-                <p class="text-gray-600 text-sm mb-4">In this carefully prepared document, we've summarized a series of
+                <p class="text-gray-600 text-md mb-4">In this carefully prepared document, we've summarized a series of
                     important soft skills for you and provided practical tips and exercises to help you become a top
                     performer in the workplace and in life. Includes: <strong>The golden rules of teamwork</strong></p>
                 <ul class="text-center list-disc pl-5 space-y-1 text-gray-600 mb-4">
