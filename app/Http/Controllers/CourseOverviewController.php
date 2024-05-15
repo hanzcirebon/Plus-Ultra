@@ -47,6 +47,7 @@ class CourseOverviewController extends Controller
 
             // Check if the data is found or not
             if ($courses->isEmpty()) {
+                $message = "Oops, ".$course_name." is not found.";
                 return response()->json(['message' => 'Oops, No courses found', 'data' => [], 'status' => 'empty'], 200);
             }
             return response()->json(['data' => $courses, 'status' => 'found'], 200);

@@ -22,7 +22,13 @@ class HomepageController extends Controller
 
         // dd($courses);
 
-        return view('course_overview', compact('courses', 'course_name'));
+        if ($courses->isEmpty()){
+            $message = "Oops, ".$course_name." is not found.";
+            return view('course_overview', compact('courses', 'message'));
+        }else{
+            return view('course_overview', compact('courses', 'course_name'));
+        }
+
     }
 
     public function course_overview_field(string $selected_field){

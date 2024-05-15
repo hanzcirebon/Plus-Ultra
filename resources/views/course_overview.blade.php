@@ -133,48 +133,16 @@
                         </div>
                     </div>
                 </div>
-
-                {{-- Accordion for SPECIALIZATION HEADER --}}
-                {{-- <h2 id=" accordion-collapse-heading-3">
-                    <button type="button" class="flex items-center justify-between w-full p-5 font-medium rtl:text-right border border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100 gap-3" data-accordion-target="#accordion-collapse-body-3" aria-expanded="true" aria-controls="accordion-collapse-body-3">
-                        <span class="text-purple_template pb-2 text-lg font-semibold">Specialization Filters</span>
-                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                        </svg>
-                    </button>
-                </h2> --}}
-                {{-- Accordion for SPECIALIZATION CONTENT --}}
-                {{-- <div id="accordion-collapse-body-3" class="hidden" aria-labelledby=" accordion-collapse-heading-3">
-                    <div class="p-5 border border-gray-200">
-                        <div class="text-md flex flex-col gap-1">
-                            <span class="text-light_purple_template">Select the specialization that you want to include</span>
-                            <div class="flex items-center gap-1">
-                                <input class="form-check-specialization w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="radio" id="specialization-check-Artificial Intelligence" name="default-radio">
-                                <label class="ms-2 text-gray-900" for="specialization-check-Artificial Intelligence">Artificial Intelligence</label>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <input class="form-check-specialization w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="radio" id="specialization-check-Data Analytics" name="default-radio">
-                                <label class="ms-2 text-gray-900" for="specialization-check-Data Analytics">Data Analytics</label>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <input class="form-check-specialization w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="radio" id="specialization-check-Cloud Computing" name="default-radio">
-                                <label class="ms-2 text-gray-900" for="specialization-check-Cloud Computing">Cloud Computing</label>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <input class="form-check-specialization w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2" type="radio" id="specialization-check-Cyber Security" name="default-radio">
-                                <label class="ms-2 text-gray-900" for="specialization-check-Cyber Security">Cyber Security</label>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
 
         {{-- DATA BOX --}}
         <div class="px-2 py-5 min-w-[784px]">
-            <div class="text-lg">
+            <div class="text-lg pb-5">
                 <h1 class="text-purple_template text-3xl font-semibold pb-10">Course List</h1>
-                @isset($course_name)
+                @if(isset($message))
+                <span id="result-text">{{ $message }}</span> 
+                @elseif(isset($course_name))
                 <span id="result-text">Result for {{$course_name}}</span> 
                 @else
                 <span id="result-text"></span>
@@ -204,17 +172,9 @@
                 var courseState = $('.form-check-state:checked').map(function() {
                     return this.id.replace('formCheck-', ''); // Collecting selected checkbox values for state
                 }).get();
-                // var courseSpecialization = $('.form-check-specialization:checked').map(function() {
-                //     return this.id.replace('specialization-check-', ''); // Collecting selected checkbox values for state
-                // }).get();
 
                 var dataContainer = $('#courses-container');
                 var resultText = $('#result-text');
-
-                // console.log(courseName)
-                // console.log(courseFields)
-                // console.log(courseState)
-                // console.log(courseSpecialization)
 
                 resultText.text(`Please wait while the system executing your request ....`);
                 dataContainer.empty();
@@ -227,14 +187,12 @@
                         course_name: courseName,
                         course_fields: courseFields,
                         course_state: courseState
-                        // course_specialization: courseSpecialization
                     },
                     success: function(data) {
-                        // console.log(data)
                         if (data.status === "empty") {
                             resultText.text(data.message);
                         } else {
-                            resultText.text(``);
+                            resultText.text(`Result for ${courseName}`);
                             $.each(data.data, function(index, course) {
                                 var courseHtml =`<a href="/course-overview/${course.course_name}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
                                                     <div class="pb-2">
@@ -274,11 +232,6 @@
             $('.form-check-state').change(function() {
                 performSearch();
             });
-
-            // bind the search function to change in state radio box
-            // $('.form-check-specialization').change(function() {
-            //     performSearch();
-            // });
         });
     </script>
 </x-mainLayout>

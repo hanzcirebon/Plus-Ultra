@@ -2,24 +2,26 @@
     <div class="bg-gray-100 flex flex-col items-center justify-center h-screen">
         <div class="space-y-4 mb-8">
             <div class="flex space-x-4">
-                <div class="cursor-pointer transition-transform transform hover:scale-105 p-6 bg-blue-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="startQuiz()">
-                    <div class="text-lg font-semibold text-blue-900">1</div>
+                <div class="cursor-pointer transition-transform transform p-6 bg-blue-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="startQuiz()">
+                    <div class="text-lg font-semibold text-blue-900">Step - 1</div>
                     <p class="text-blue-900">Complete the Test</p>
                 </div>
-                <div class="cursor-pointer transition-transform transform hover:scale-105 p-6 bg-yellow-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="viewRecommendations()">
-                    <div class="text-lg font-semibold text-yellow-900">2</div>
+                <div class="cursor-pointer transition-transform transform p-6 bg-yellow-200 rounded-xl shadow-lg flex flex-col items-center justify-center" onclick="viewRecommendations()">
+                    <div class="text-lg font-semibold text-yellow-900">Step - 2</div>
                     <p class="text-yellow-900">View Recommends</p>
                 </div>
             </div>
         </div>
-        <div class="w-full max-w-xl p-5 bg-white rounded-lg shadow-lg">
-            <h1 class="text-2xl font-bold text-center mb-4">Welcome to the Fun Quiz!</h1>
-            <p class="text-gray-700 text-md mb-6 text-center">Test your knowledge with our quick and fun quiz. Let's see how much you know!</p>
+        <div class="relative w-full max-w-xl p-5 bg-white rounded-lg shadow-lg">
+            {{-- <p class="absolute border-2 p-3 bottom-2 left-1/2 w-20 text-center text-cyan-50 bg-slate-800 rounded-xl"><span id="currentQuestion">1</span> / 10</p> --}}
+            <h1 class="text-2xl font-bold text-center mb-4">Welcome to the Short Questions!</h1>
+            <p class="text-gray-700 text-md mb-6 text-center">Get personalize specialization result using our Recommendation Model, and see which field would be a fit for you!</p>
             <div id="question-container" class="flex flex-col space-y-4">
                 <!-- Question will be injected here -->
             </div>
             <div class="flex justify-between mt-6">
                 <button id="prev-btn" class=" bg-gray-300 text-gray-600 cursor-not-allowed font-bold py-2 px-4 rounded" onclick="prevQuestion()">Previous</button>
+                <p class="bg-slate-600 text-cyan-50 font-bold py-2 px-4 rounded"><span id="currentQuestion">1</span> / 10</p>
                 <button id="submit-btn" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded hidden" onclick="submitQuiz()">Submit</button>
                 <button id="next-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="nextQuestion()">Next</button>
             </div>
@@ -86,6 +88,9 @@
         let currentQuestion = 0;
 
         function displayQuestion() {
+            // Display the question's number parameter
+            document.getElementById('currentQuestion').textContent = currentQuestion + 1;
+            // Display which questions
             const questionContainer = document.getElementById('question-container');
             questionContainer.innerHTML = `<div class="text-lg font-semibold">${currentQuestion+1}. ${questions[currentQuestion].question}</div>
             <div class="flex flex-col space-y-2">
