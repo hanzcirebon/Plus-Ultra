@@ -31,7 +31,7 @@
                 <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
                     <div class="p-5 border border-gray-200 ">
                         <div class="text-md flex flex-col gap-1">
-                            <span class="text-light_purple_template">Enter the range of salary that you want</span>
+                            <span class="text-slate-500 pb-2">Enter the minimum of annual salary that you want</span>
                             <div class="max-w-[18rem] mx-auto flex">
                                 <div class="relative w-full">
                                     <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
