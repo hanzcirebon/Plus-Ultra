@@ -9,9 +9,8 @@
                     <h1 class="text-purple_template text-3xl font-semibold mb-5 text-center">{{$job->job_title}}</h1>
                     {{$job->job_description}}
                     <div class="pt-10">
-                        <button type="button" onclick="copyUrlToClipboard()" class="text-blue-600 hover:underline">Copy link</button>
+                        <button type="button" onclick="copyUrlToClipboard()" class="text-blue-600 hover:underline">Click Here To Copy This link</button>
                         {{-- <a href="#">Share link</a> --}}
-                        <!-- Display the current URL without query string -->
                     </div>
                 </div>
                 <img class="h-96 hover:scale-105 transition-all duration-250" src="{{asset('img/Job-listing.jpeg')}}">

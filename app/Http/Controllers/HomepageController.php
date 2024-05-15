@@ -20,15 +20,14 @@ class HomepageController extends Controller
             ->whereRaw('LOWER(course_name) LIKE ?', ['%'.trim(strtolower($course_name)).'%'])
             ->get();
 
-        // dd($courses);
-
         if ($courses->isEmpty()){
             $message = "Oops, ".$course_name." is not found.";
+            
             return view('course_overview', compact('courses', 'message'));
         }else{
+
             return view('course_overview', compact('courses', 'course_name'));
         }
-
     }
 
     public function course_overview_field(string $selected_field){
@@ -37,7 +36,7 @@ class HomepageController extends Controller
                 ->select('cricos.course_name', 'course_description.single_desc')
                 ->distinct('cricos.course_name')
                 ->get();
-        // dd($courses);
+
         return view('course_overview', compact('courses'));
     }
 }

@@ -76,8 +76,6 @@ class CourseOverviewController extends Controller
         $course_content = CourseDescription::where('course_name','=',$course_name)
             ->first();
 
-        //dd($universities);
-        //dd($course_content);
         return view('course_overview_template', compact('universities','course_content'));
     }
 
