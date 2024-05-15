@@ -10,7 +10,7 @@
                 <p class="text-xl font-semibold text-gray-700 py-5 text-center sm:text-left">Your academic and career path should be clear and promising. Our platform guides learning paths for IT and digital creative fields to help you make informed choices.</p>
             </div>
             <div class="">
-                <img class="h-96" src="{{ asset('img/homepage.png') }}">
+                <img class="h-96" src="{{ asset('img/Homepage color.jpg') }}">
             </div>
         </div>
         <div class="max-w-full flex justify-center banner text-interact pb-5">
