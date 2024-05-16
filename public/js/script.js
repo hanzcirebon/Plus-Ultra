@@ -1,6 +1,6 @@
 const dynamicText = document.getElementById('dynamic-text');
 const cursor = document.querySelector('.cursor');
-const toRotate = ["I want to explore Course Overview", "I want to explore Job Overview", "I want to explore Global Trends"];
+const toRotate = ["I want to explore Course Overview", "I want to explore Job Overview", "I want to explore Global Trends", "I want to improve my Soft Skills", "I want to know my Intrest in IT", "I want to be an Expert in IT field"];
 const period = 2000;
 let loopNum = 0;
 let text = '';
