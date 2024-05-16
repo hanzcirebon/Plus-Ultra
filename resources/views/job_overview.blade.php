@@ -109,7 +109,7 @@
                                 <a href="jobs-overview/${job.job_title}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
                                     <div class="pb-2 flex flex-col">
                                         <span class="text-pink_template text-xl font-semibold">${job.job_title}</span>
-                                        <span class="text-sm">Annual salary: ~A${{ $job->salary }}</span>
+                                        <span class="text-sm">Annual salary: ~A${ job.salary }</span>
                                     </div>
                                     <p>${job.job_description}</p>
                                 </a>
