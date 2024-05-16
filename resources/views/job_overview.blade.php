@@ -62,8 +62,9 @@
             <div id="jobs-container" class="flex flex-col gap-4">
                 @foreach($jobs as $job)
                 <a href="{{route('job-overview.details', $job->job_title)}}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
-                    <div class="pb-2">
-                        <span class="text-pink_template text-xl font-semibold">{{ $job->job_title }} (salary: ~A${{ $job->salary }})</span>
+                    <div class="pb-2 flex flex-col">
+                        <span class="text-pink_template text-xl font-semibold">{{ $job->job_title }}</span>
+                        <span class="text-sm">Annual salary: ~A${{ $job->salary }}</span>
                     </div>
                     <p>{{ $job->job_description }}</p>
                 </a>
@@ -106,8 +107,9 @@
                                 // console.log(job.job_title)
                                 var jobHtml = `
                                 <a href="jobs-overview/${job.job_title}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
-                                    <div class="pb-2">
-                                        <span class="text-pink_template text-xl font-semibold">${job.job_title} (${job.salary})</span>
+                                    <div class="pb-2 flex flex-col">
+                                        <span class="text-pink_template text-xl font-semibold">${job.job_title}</span>
+                                        <span class="text-sm">Annual salary: ~A${{ $job->salary }}</span>
                                     </div>
                                     <p>${job.job_description}</p>
                                 </a>
