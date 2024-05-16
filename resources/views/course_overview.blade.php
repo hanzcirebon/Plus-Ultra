@@ -192,7 +192,11 @@
                         if (data.status === "empty") {
                             resultText.text(data.message);
                         } else {
-                            resultText.text(`Result for ${courseName}`);
+                            if (courseName === "") {
+                                resultText.text(``);
+                            }else{
+                                resultText.text(`Result for ${courseName}`);
+                            }
                             $.each(data.data, function(index, course) {
                                 var courseHtml =`<a href="/course-overview/${course.course_name}" class="border-2 rounded-lg px-2 py-3 min-w-3xl max-w-3xl inline-block hover:shadow-2xl hover:shadow-sky-200 hover:border-4 ease-in duration-100 focus:bg-sky-100">
                                                     <div class="pb-2">
