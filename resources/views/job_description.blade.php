@@ -1,5 +1,5 @@
 <x-mainLayout>
-    <div class="flex flex-col justify-center items-center">
+    <div class="flex flex-col justify-center items-center mb-32">
         <div class="flex justify-center items-center mb-10 w-5/6">
             <div class="flex flex-row justify-center gap-10 bg-sky-100 rounded-lg p-10">
                 <div class="w-4/12">

@@ -1,5 +1,5 @@
 <x-mainLayout>
-    <div>
+    <div class="mb-32">
         <div class="flex flex-col justify-center items-center mb-10">
             <div class="text-center">
                 <h1 class="text-pink_template text-3xl font-semibold mb-5">{{$course_content->course_name}}</h1>
