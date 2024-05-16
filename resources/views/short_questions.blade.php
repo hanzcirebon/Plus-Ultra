@@ -179,6 +179,7 @@
                 alert('Congratulations! You have submitted the quiz.');
                 submitBtn.disabled = false;
                 submitBtn.classList.remove('cursor-not-allowed', 'opacity-50');
+                window.location.href = '/specialization'; 
             })
             .catch((error) => {
                 console.error('Error:', error);
