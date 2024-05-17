@@ -19,6 +19,7 @@
         <div class="max-w-full pt-10">
             {{-- Flippable card container --}}
             <div class="flex flex-wrap gap-10 justify-center">
+            {{-- LOOP FOR EACH STAGES --}}
             @foreach ($roadmap['stages'] as $stage)
                 <div class="flip-card bg-transparent w-[400px] h-[550px] rounded-xl border-slate-50 [perspective:1000px] hover:shadow-2xl transition-all hover:scale-105 duration-300" onclick="this.classList.toggle('flipped') ">
                     <div class="flip-card-inner relative w-full h-full transition-transform duration-1000 rounded-xl">
@@ -37,6 +38,25 @@
                     </div>
                 </div> 
             @endforeach
+            {{-- FOR RELATED COURSES --}}
+                <div class="flip-card bg-transparent w-[400px] h-[550px] rounded-xl border-slate-50 [perspective:1000px] hover:shadow-2xl transition-all hover:scale-105 duration-300" onclick="this.classList.toggle('flipped') ">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-1000 rounded-xl">
+                        <div class="flip-card-front {{$titleColors[$chosen_field] ?? 'bg-gray-50'}} absolute w-full h-full flex flex-col gap-5 rounded-xl justify-center text-center items-center ">
+                            <h2 class="text-4xl font-bold pb-1.5">Related Courses</h2>
+                            <p class="text-lg font-semibold">Click for more details!</p>
+                        </div>
+                        <div class="flip-card-back absolute w-full h-full bg-cyan-100 p-2 rounded-xl">
+                            <h2 class="text-lg underline">Related Courses - Click to see the course details</h2>
+                            <ul class="list-disc list-inside">
+                                @foreach ($courses as $course)
+                                    <li>
+                                        <a href="{{ route('courses-overview.detail', $course->course_name) }}" class="hover:underline">{{ $course->course_name }}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </div>
     </div>
