@@ -1,6 +1,6 @@
 <x-mainLayout>
     <div class="max-w-full flex justify-center">
-        <div class="w-[762px] border-2 border-black shadow-[8px_8px_1px_0px_rgba(249,255,82)] hover:shadow-[10px_10px_5px_2px_rgba(249,255,82)] ring-offset-0 rounded py-5 px-20 mt-10 ease-out duration-150">
+        <div class="w-[762px] border-2 border-black shadow-[8px_8px_1px_0px_rgba(255,135,176)] hover:shadow-[10px_10px_5px_2px_rgba(255,135,176)] ring-offset-0 rounded py-5 px-20 mt-10 ease-out duration-150">
             <label for="course-input" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
